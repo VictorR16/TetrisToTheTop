@@ -4,30 +4,99 @@ let lastTime = 0;
 let dropInterval = 1000;
 let dropCounter = 0;
 const grid = createMatriz(10, 20);
+let pause = false;
+
+const canvasNext = document.getElementById("nextPiece");
+const contextNext = canvasNext.getContext("2d");
+
+const colors = [
+    null,
+    'red',
+    'blue',
+    'violet',
+    'green',
+    'purple',
+    'orange',
+    'pink'
+
+];
+
 const player = {
     pos: { x: 0, y: 0 },
-    matriz: null
+    matriz: null,
+    next: null,
+    score: 0,
+    lines: 0,
+    level: 0
 }
 
 context.scale(20, 20);
+contextNext.scale(19, 19);
 
 
 function createPiece(tipo) {
-    if (tipo === "T") {
-        return [
-            [0, 0, 0],
-            [1, 1, 1],
-            [0, 1, 0]
-        ];
-        
-    } else if (tipo === "T") {
-        return [
-            [0, 0, 0],
-            [1, 1, 1],
-            [0, 1, 0]
-        ];
-        
-    } 
+    switch (tipo) {
+        case "T":
+            return [
+                [0, 0, 0],
+                [1, 1, 1],
+                [0, 1, 0]
+            ];
+            break;
+        case "O":
+            return [
+                [2, 2],
+                [2, 2]
+            ];
+            break;
+        case "L":
+            return [
+                [0, 3, 0],
+                [0, 3, 0],
+                [0, 3, 3]
+            ];
+            break;
+        case "J":
+            return [
+                [0, 4, 0],
+                [0, 4, 0],
+                [4, 4, 0]
+            ];
+            break;
+        case "I":
+            return [
+                [0, 5, 0, 0],
+                [0, 5, 0, 0],
+                [0, 5, 0, 0],
+                [0, 5, 0, 0]
+            ];
+            break;
+        case "S":
+            return [
+                [0, 6, 6],
+                [6, 6, 0],
+                [0, 0, 0]
+            ];
+            break;
+        case "Z":
+            return [
+                [7, 7, 0],
+                [0, 7, 7],
+                [0, 0, 0]
+            ];
+            break;
+    }
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
@@ -70,7 +139,7 @@ function drawMatriz(matriz, offset) {
     matriz.forEach((row, y) => {
         row.forEach((value, x) => {
             if (value !== 0) {
-                context.fillStyle = "red";
+                context.fillStyle = colors[value];
                 context.fillRect(x + offset.x, y + offset.y, 1, 1);
             }
 
@@ -80,23 +149,70 @@ function drawMatriz(matriz, offset) {
 
 }
 
+function drawMatrizNext(matriz, offset) {
+
+    contextNext.fillStyle = "#000000";
+    contextNext.fillRect(0, 0, canvasNext.width, canvasNext.height);
+
+    matriz.forEach((row, y) => {
+        row.forEach((value, x) => {
+            if (value !== 0) {
+                contextNext.fillStyle = colors[value];
+                contextNext.fillRect(x + offset.x, y + offset.y, 1, 1);
+            }
+
+        });
+    });
+
+
+}
+
+
 function draw() {
     context.fillStyle = "#000000";
     context.fillRect(0, 0, canvas.width, canvas.height);
     drawMatriz(grid, { x: 0, y: 0 });
     drawMatriz(player.matriz, player.pos);
+    drawMatrizNext(player.next, { x: 1, y: 1 });
+}
+
+function gridSweep() {
+    let rowCount = 1;
+    outer: for (let y = grid.length - 1; y > 0; --y) {
+        for (let x = 0; x < grid[y].length; ++x) {
+            if (grid[y][x] === 0) {
+                continue outer;
+            }
+
+        }
+
+        const row = grid.splice(y, 1)[0].fill(0);
+        grid.unshift(row);
+        ++y;
+
+        player.score += rowCount * 10;
+        player.lines++;
+        rowCount *= 2;
+        if (player.lines % 3 === 0) player.level++;
+    }
+
+
 }
 
 function update(time = 0) {
-    const deltaTime = time - lastTime;
-    lastTime = time;
-    dropCounter += deltaTime;
-    if (dropCounter > dropInterval) {
-        playerDrop();
-    }
+    if (pause) return;
 
-    draw();
-    requestAnimationFrame(update);
+        const deltaTime = time - lastTime;
+        lastTime = time;
+        dropCounter += deltaTime;
+        if (dropCounter > dropInterval) {
+            playerDrop();
+        }
+
+        draw();
+        requestAnimationFrame(update);
+    
+
 }
 
 function playerDrop() {
@@ -105,14 +221,32 @@ function playerDrop() {
         player.pos.y--;
         merge(grid, player);
         playerReset()
+        gridSweep();
+        updateScore()
     }
     dropCounter = 0;
 }
 
 function playerReset() {
-    player.matriz = createPiece("T");
-    player.pos.x = 0;
+    const pieces = 'ILJOTSZ';
+    dropInterval = 1000 - (player.level * 100);
+    if (player.next === null) {
+        player.matriz = createPiece(pieces[pieces.length * Math.random() | 0]);
+    } else {
+        player.matriz = player.next;
+    }
+
+    player.next = createPiece(pieces[pieces.length * Math.random() | 0]);
+    player.pos.x = (grid[0].length / 2 | 0) - (player.matriz[0].length / 2 | 0);
     player.pos.y = 0;
+    if (collide(grid, player)) {
+        grid.forEach(row => row.fill(0));
+        player.score = 0;
+        player.lines = 0;
+        player.level = 0;
+        updateScore();
+
+    }
 }
 
 function playerMove(direction) {
@@ -151,18 +285,43 @@ function PlayerRotate() {
 
 
 document.addEventListener("keydown", event => {
-    if (event.keyCode === 40) {
-        playerDrop();
-    } else if (event.keyCode === 37) {
-        playerMove(-1)
-    } else if (event.keyCode === 39) {
-        playerMove(1)
-    } else if (event.keyCode === 32) {
-        PlayerRotate();
-    }
+    switch (event.keyCode) {
+        case 40:
+            playerDrop();
+            break;
+        case 37:
+            playerMove(-1);
+            break;
+        case 39:
+            playerMove(1);
+            break;
+        case 32:
+            PlayerRotate();
+            break;
+
+
+    };
 })
 
 
+function updateScore() {
+    document.getElementById("score").innerHTML = player.score;
+    document.getElementById("lines").innerHTML = player.lines;
+    document.getElementById("level").innerHTML = player.level;
 
+}
+
+
+function fPause(pausar_ahora) {
+    pause = pausar_ahora;
+    if(pause){
+
+    }else{
+        update();
+    }
+}
+
+
+updateScore();
 playerReset();
 update();
