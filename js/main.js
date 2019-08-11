@@ -1,10 +1,12 @@
 const canvas = document.getElementById("tetris");
 const context = canvas.getContext("2d");
+const SQ = 20;
 let lastTime = 0;
 let dropInterval = 1000;
 let dropCounter = 0;
 const grid = createMatriz(10, 20);
 let pause = false;
+let rowCount = 20;
 
 const canvasNext = document.getElementById("nextPiece");
 const contextNext = canvasNext.getContext("2d");
@@ -17,7 +19,8 @@ const colors = [
     'green',
     'purple',
     'orange',
-    'pink'
+    'pink',
+    'black'
 
 ];
 
@@ -85,6 +88,10 @@ function createPiece(tipo) {
                 [0, 0, 0]
             ];
             break;
+        case "B":
+            return [
+                [8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+            ];
     }
 
 
@@ -169,8 +176,19 @@ function drawMatrizNext(matriz, offset) {
 
 
 function draw() {
+    var img = new Image();
+    img.src = "img/fondo.jpg";
+    context.drawImage(img, 0, 0);
+
+
     context.fillStyle = "#000000";
-    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.fillRect(0, rowCount, 10, 10);
+
+
+
+
+    /*  context.fillStyle = "#ffffff";*/
+    /* context.fillRect(0, 0, canvas.width, canvas.height);*/
     drawMatriz(grid, { x: 0, y: 0 });
     drawMatriz(player.matriz, player.pos);
     drawMatrizNext(player.next, { x: 1, y: 1 });
@@ -199,19 +217,37 @@ function gridSweep() {
 
 }
 
+function gridBlock() {
+    rowCount--;
+    outer: for (let y = grid.length - 1; y > 0; --y) {
+
+        const row = grid.splice(y, 1).draw();
+        grid.unshift(row);
+        ++y;
+        draw();
+
+
+
+    }
+
+
+}
+
+
+
 function update(time = 0) {
     if (pause) return;
 
-        const deltaTime = time - lastTime;
-        lastTime = time;
-        dropCounter += deltaTime;
-        if (dropCounter > dropInterval) {
-            playerDrop();
-        }
+    const deltaTime = time - lastTime;
+    lastTime = time;
+    dropCounter += deltaTime;
+    if (dropCounter > dropInterval) {
+        playerDrop();
+    }
 
-        draw();
-        requestAnimationFrame(update);
-    
+    draw();
+    requestAnimationFrame(update);
+
 
 }
 
@@ -314,9 +350,9 @@ function updateScore() {
 
 function fPause(pausar_ahora) {
     pause = pausar_ahora;
-    if(pause){
+    if (pause) {
 
-    }else{
+    } else {
         update();
     }
 }
