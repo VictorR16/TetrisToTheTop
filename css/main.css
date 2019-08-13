@@ -1,4 +1,28 @@
+#menu{
+    display: block;
+}
+
+#juego{
+    display: none;
+}
+
+
 #tetris{
     width: 200px;
-    height: 400;
+    height: 400px;
 }
+
+#score{
+    width: 50px;
+}
+
+#lines{
+    width: 50px;
+}
+
+#level{
+    width: 50px;
+}
+
+
+

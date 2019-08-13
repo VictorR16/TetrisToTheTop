@@ -1,15 +1,17 @@
-const canvas = document.getElementById("tetris");
-const context = canvas.getContext("2d");
-const SQ = 20;
 let lastTime = 0;
 let dropInterval = 1000;
 let dropCounter = 0;
 const grid = createMatriz(10, 20);
 let pause = false;
-let rowCount = 20;
-
+let rowCountB = 20;
+const canvas = document.getElementById("tetris");
+const context = canvas.getContext("2d");
+context.scale(20, 20);
 const canvasNext = document.getElementById("nextPiece");
 const contextNext = canvasNext.getContext("2d");
+contextNext.scale(19, 19);
+
+
 
 const colors = [
     null,
@@ -33,10 +35,8 @@ const player = {
     level: 0
 }
 
-context.scale(20, 20);
-contextNext.scale(19, 19);
 
-
+/* Piezas del juego */
 function createPiece(tipo) {
     switch (tipo) {
         case "T":
@@ -106,7 +106,7 @@ function createPiece(tipo) {
 
 }
 
-
+/* tamaño figuras */
 function createMatriz(width, height) {
     const matriz = [];
     while (height--) {
@@ -116,7 +116,7 @@ function createMatriz(width, height) {
 
 }
 
-
+/* Comprobar colicion de las figuras */
 function collide(grid, player) {
     const matriz = player.matriz;
     const offset = player.pos;
@@ -132,6 +132,7 @@ function collide(grid, player) {
     return false;
 }
 
+/*Unir figuras */
 function merge(grid, player) {
     player.matriz.forEach((row, y) => {
         row.forEach((value, x) => {
@@ -140,8 +141,10 @@ function merge(grid, player) {
             }
         });
     });
+
 }
 
+/* Dibujar la piezas en el canvas */
 function drawMatriz(matriz, offset) {
     matriz.forEach((row, y) => {
         row.forEach((value, x) => {
@@ -156,6 +159,7 @@ function drawMatriz(matriz, offset) {
 
 }
 
+/* Dibujar la figura siguiente en su respectivo cuadro */
 function drawMatrizNext(matriz, offset) {
 
     contextNext.fillStyle = "#000000";
@@ -174,7 +178,7 @@ function drawMatrizNext(matriz, offset) {
 
 }
 
-
+/* Dibujar el canvas y las figuras*/
 function draw() {
     var img = new Image();
     img.src = "img/fondo.jpg";
@@ -182,9 +186,7 @@ function draw() {
 
 
     context.fillStyle = "#000000";
-    context.fillRect(0, rowCount, 10, 10);
-
-
+    context.fillRect(0, rowCountB, 10, 10);
 
 
     /*  context.fillStyle = "#ffffff";*/
@@ -192,8 +194,10 @@ function draw() {
     drawMatriz(grid, { x: 0, y: 0 });
     drawMatriz(player.matriz, player.pos);
     drawMatrizNext(player.next, { x: 1, y: 1 });
-}
 
+
+}
+/* Funcion para eliminar filas si estan completas */
 function gridSweep() {
     let rowCount = 1;
     outer: for (let y = grid.length - 1; y > 0; --y) {
@@ -206,6 +210,7 @@ function gridSweep() {
 
         const row = grid.splice(y, 1)[0].fill(0);
         grid.unshift(row);
+
         ++y;
 
         player.score += rowCount * 10;
@@ -217,24 +222,9 @@ function gridSweep() {
 
 }
 
-function gridBlock() {
-    rowCount--;
-    outer: for (let y = grid.length - 1; y > 0; --y) {
-
-        const row = grid.splice(y, 1).draw();
-        grid.unshift(row);
-        ++y;
-        draw();
 
 
-
-    }
-
-
-}
-
-
-
+/* Actualiza la pantalla cada frame */
 function update(time = 0) {
     if (pause) return;
 
@@ -249,8 +239,10 @@ function update(time = 0) {
     requestAnimationFrame(update);
 
 
+
 }
 
+/* Funcion para la caida de las piezas */
 function playerDrop() {
     player.pos.y++;
     if (collide(grid, player)) {
@@ -263,6 +255,7 @@ function playerDrop() {
     dropCounter = 0;
 }
 
+/*Funcion para la creacion de nuevas figuras y controlar su caida */
 function playerReset() {
     const pieces = 'ILJOTSZ';
     dropInterval = 1000 - (player.level * 100);
@@ -280,18 +273,20 @@ function playerReset() {
         player.score = 0;
         player.lines = 0;
         player.level = 0;
+        rowCount = 20;
         updateScore();
 
     }
 }
 
+/* Funcion para mover horizontalmente las figuras*/
 function playerMove(direction) {
     player.pos.x += direction;
     if (collide(grid, player)) {
         player.pos.x -= direction;
     }
 }
-
+/* Funcion para rotar las figuras */
 function rotate(matriz) {
     for (let y = 0; y < matriz.length; ++y) {
         for (let x = 0; x < y; ++x) {
@@ -302,6 +297,7 @@ function rotate(matriz) {
     matriz.forEach(row => row.reverse());
 }
 
+/* Funcion para rotar, llamado jugador */
 function PlayerRotate() {
     const pos = player.pos.x;
     let offset = 1;
@@ -318,8 +314,49 @@ function PlayerRotate() {
     }
 }
 
+function rotar() {
+    PlayerRotate();
+}
+
+/* Controles Tactiles */
+function touch() {
+
+    var xIni;
+    var yIni;
+    var canvas = document.getElementById('tetris');
 
 
+    canvas.addEventListener('touchstart', function (e) {
+        if (e.targetTouches.length == 1) {
+            var touch = e.targetTouches[0];
+            xIni = touch.pageX;
+            yIni = touch.pageY;
+
+
+
+        }
+    }, false);
+
+    canvas.addEventListener('touchmove', function (e) {
+        if (e.targetTouches.length == 1) {
+            var touch = e.targetTouches[0];
+            if ((touch.pageX > xIni + 20) && (touch.pageY > yIni - 5) && (touch.pageY < yIni + 5)) {
+                /* alert("el swipe se genera hacia la derecha");¨*/
+                playerMove(1);
+            } else if ((touch.pageX < xIni - 20) && (touch.pageY > yIni - 5) && (touch.pageY < yIni + 5)) {
+                /* alert("el swipe se genera hacia la izquierda"); */
+
+                playerMove(-1);
+            } else if ((touch.pageY > yIni + 30) && (touch.pageX > xIni - 5) && (touch.pageX < xIni + 5)) {
+                playerDrop();
+            }
+        }
+    }, false);
+
+}
+
+
+/* Controles con teclado*/
 document.addEventListener("keydown", event => {
     switch (event.keyCode) {
         case 40:
@@ -339,7 +376,7 @@ document.addEventListener("keydown", event => {
     };
 })
 
-
+/* Se actualizan los puntajes en el juego */
 function updateScore() {
     document.getElementById("score").innerHTML = player.score;
     document.getElementById("lines").innerHTML = player.lines;
@@ -347,7 +384,7 @@ function updateScore() {
 
 }
 
-
+/*  Validar si se pausa y si se despausa */
 function fPause(pausar_ahora) {
     pause = pausar_ahora;
     if (pause) {
@@ -358,6 +395,13 @@ function fPause(pausar_ahora) {
 }
 
 
-updateScore();
-playerReset();
-update();
+function iniciarJuego() {
+    document.getElementById("juego").style.display = "block";
+    document.getElementById("menu").style.display = "none";
+    
+    touch();
+    updateScore();
+    playerReset();
+    update();
+}
+
