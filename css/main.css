@@ -6,6 +6,19 @@
     display: none;
 }
 
+#fondoMenu{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+}
+
+#botonesMenu{
+    position: relative;
+    margin: 0 auto;
+    top: -150px; 
+}
+
 
 #tetris{
     width: 200px;

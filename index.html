@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,36 +8,42 @@
     <title>Tetris To The Top</title>
     <link rel="StyleSheet" href="css/main.css">
 </head>
+
 <body>
 
     <div id="menu">
-        <button onclick="iniciarJuego()" >Jugar</button>
+
+        <img id="fondoMenu" src="recursos/FondoMenu.jpg" />
+
+
+        <button id="boton jugar" onclick="iniciarJuego()">Jugar</button>
     </div>
     <div id="pantallaCarga">
 
     </div>
     <div id="juego">
-            <div id="score"></div>
-            <div id="lines"></div>
-            <div id="level"></div>
-            <canvas id="nextPiece" width="100" height="100"></canvas>
-            <div class="btn_pausa">
-                <button onclick="fPause(true)">Pausa</button>
-                <button onclick="fPause(false)">Continuar</button>
-                <button onclick="rotar()" id="rotar">Rotar</button>
-        
-        
-        
-        
-        
-        
-            </div>
-        
-        
-            
-            <canvas id="tetris" width="200" height="400"></canvas>
+        <div id="score"></div>
+        <div id="lines"></div>
+        <div id="level"></div>
+        <canvas id="nextPiece" width="100" height="100"></canvas>
+        <div class="btn_pausa">
+            <button onclick="fPause(true)">Pausa</button>
+            <button onclick="fPause(false)">Continuar</button>
+            <button onclick="rotar()" id="rotar">Rotar</button>
+
+
+
+
+
+
+        </div>
+
+
+
+        <canvas id="tetris" width="200" height="400"></canvas>
     </div>
-    
+
     <script src="js/main.js"></script>
 </body>
+
 </html>
