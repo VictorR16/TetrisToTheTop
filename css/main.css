@@ -1,6 +1,6 @@
 #menu{
     display: block;
-    position: relative;
+    position: absolute;
     text-align: center;
     width: 100%;
     height: 100%;
@@ -20,27 +20,27 @@
 
 
 #logoJuego{
-    top:-305px;
-    right: -53px;
+    top:-1417px;
+    right: -290px;
     position: relative;
     width: 40%;
 
 }
 
 #fonoTextoJugar{
-    position: absolute;
-    top: 250px;
-    right: 99px;
-    height: 28px;
+    position: relative;
+    top: -961px;
+    right: 129px;
+    height: 96px;
     margin: 0px;
 }
 
 
 #imagenJugar{
     position: relative;
-    height: 19px;
-    top:-222px;
-    right: 29px;
+    height:66px;
+    top:-972px;
+    right: 374px;
 }
 
 #botonesMenu{
