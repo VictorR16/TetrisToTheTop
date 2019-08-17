@@ -75,7 +75,7 @@
 
 #fondoTextoCreditos{
     position: relative;
-    top: -420px;
+    top: -391;
     right: 85px;
     height: 23px;
     margin: 0px;
@@ -85,9 +85,9 @@
 
 #creditosTexto{
     position: relative;
-    height:66px;
-    top:-820px;
-    right: 152px;
+    height:18px;
+    top:-415px;
+    right: -6px;
 
 }
 
