@@ -51,9 +51,27 @@ body{
 #fondoTextoJugar{
     position: relative;
     top: -400px;
-    right: 35px;
+    right: 30px;
     height: 36px;
     margin: 0px;
+}
+
+#imagenJugar{
+    position: relative;
+    height:25px;
+    top:-403px;
+    right: 20px;
+}
+
+
+
+#fondoTextoCreditos{
+    position: relative;
+    top: -270px;
+    right: 30px;
+    height: 23px;
+    margin: 0px;
+   
 }
 
 #creditosTitulo{
@@ -69,24 +87,6 @@ body{
 
 }
 
-
-#imagenJugar{
-    position: relative;
-    height:25px;
-    top:-403px;
-    right: 35px;
-}
-
-
-
-#fondoTextoCreditos{
-    position: relative;
-    top: -270px;
-    right: 30px;
-    height: 23px;
-    margin: 0px;
-   
-}
 
 
 
