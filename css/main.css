@@ -7,6 +7,15 @@
     margin: 0px;
 }
 
+#creditos{
+    display: none;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
 #juego{
     display: none;
 }
@@ -18,21 +27,40 @@
 
 }
 
+#fondoCreditos{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
 
 #logoJuego{
     top:-1417px;
-    right: -290px;
+    right: -260px;
     position: relative;
     width: 40%;
 
 }
 
-#fonoTextoJugar{
+#fondoTextoJugar{
     position: relative;
     top: -961px;
-    right: 129px;
+    right: 145px;
     height: 96px;
     margin: 0px;
+}
+
+#creditosTitulo{
+    position: relative;
+    top: -1825px;
+    width: 53%;
+}
+
+#creditosContenido{
+    position: relative;
+    top: -2000px;
+    width: 78%;
+
 }
 
 
@@ -40,7 +68,27 @@
     position: relative;
     height:66px;
     top:-972px;
-    right: 374px;
+    right: 398px;
+}
+
+
+
+#fondoTextoCreditos{
+    position: relative;
+    top: -801px;
+    right: -112px;
+    height: 96px;
+    margin: 0px;
+}
+
+
+
+#creditosTexto{
+    position: relative;
+    height:66px;
+    top:-820px;
+    right: 152px;
+
 }
 
 #botonesMenu{

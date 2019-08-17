@@ -395,6 +395,13 @@ function fPause(pausar_ahora) {
 }
 
 
+function creditos(){
+    document.getElementById("menu").style.display="none";
+    document.getElementById("creditos").style.display="block";
+
+}
+
+
 function iniciarJuego() {
     document.getElementById("juego").style.display = "block";
     document.getElementById("menu").style.display = "none";
