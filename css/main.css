@@ -42,7 +42,7 @@ body{
 
 #logoJuego{
     top:-480px;
-    right: 20px;
+    right: 100px;
     position: relative;
     width: 45%;
 
@@ -50,7 +50,7 @@ body{
 
 #fondoTextoJugar{
     position: relative;
-    top: -430px;
+    top: -400px;
     right: 35px;
     height: 36px;
     margin: 0px;
@@ -73,7 +73,7 @@ body{
 #imagenJugar{
     position: relative;
     height:25px;
-    top:-400px;
+    top:-403px;
     right: 35px;
 }
 
@@ -82,7 +82,7 @@ body{
 #fondoTextoCreditos{
     position: relative;
     top: -300px;
-    right: 35px;
+    right: 30px;
     height: 23px;
     margin: 0px;
    
