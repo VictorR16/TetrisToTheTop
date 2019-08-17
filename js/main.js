@@ -401,6 +401,12 @@ function creditos(){
 
 }
 
+function atrasCreditos(){
+    document.getElementById("creditos").style.display="none";
+    document.getElementById("menu").style.display="block";
+    
+}
+
 
 function iniciarJuego() {
     document.getElementById("juego").style.display = "block";
@@ -411,4 +417,5 @@ function iniciarJuego() {
     playerReset();
     update();
 }
+
 

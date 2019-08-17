@@ -82,19 +82,29 @@ body{
    
 }
 
-#creditosTitulo{
-    position: relative;
-    top: -1825px;
-    width: 53%;
-}
 
 #creditosContenido{
     position: relative;
-    top: -2000px;
-    width: 78%;
+    top: -590px;
+    width: 70%;
+    right: -30px;
 
 }
 
+#fondoBtnAtrasCreditos{
+    position: relative;
+    top: -540px;
+    width: 10%;
+    right: 250px;
+}
+
+#btnAtrasCreditos{
+    position: relative;
+    top: -547px;
+    width: 5%;
+    right: 282px;
+    transform: rotate(200grad);
+}
 
 #botonesMenu{
     position: relative;
