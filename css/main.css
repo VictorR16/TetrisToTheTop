@@ -5,6 +5,7 @@
     width: 100%;
     height: 100%;
     margin: 0px;
+    padding:0px;
 }
 
 #creditos{
@@ -86,8 +87,8 @@
 #creditosTexto{
     position: relative;
     height:18px;
-    top:-398px;
-    right: 152px;
+    top:-390px;
+    right: 160px;
 
 }
 
