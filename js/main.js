@@ -408,14 +408,22 @@ function atrasCreditos(){
 }
 
 
+
 function iniciarJuego() {
-    document.getElementById("juego").style.display = "block";
+    document.getElementById("pantallaCargaHistoria").style.display = "block";
     document.getElementById("menu").style.display = "none";
     
-    touch();
+  /**   touch();
     updateScore();
     playerReset();
     update();
+    */
 }
 
+function adelanteCarga(){
+    document.getElementById("pantallaCargaHistoria").style.display="none";
+    document.getElementById("pantallaCargaControles").style.display = "block";
+
+
+}
 
