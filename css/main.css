@@ -41,17 +41,17 @@ body{
 
 
 #logoJuego{
-    top:-500px;
-    right: 0px;
+    top:-480px;
+    right: 20px;
     position: relative;
-    width: 40%;
+    width: 45%;
 
 }
 
 #fondoTextoJugar{
     position: relative;
     top: -430px;
-    right: 156px;
+    right: 35px;
     height: 36px;
     margin: 0px;
 }
@@ -72,17 +72,17 @@ body{
 
 #imagenJugar{
     position: relative;
-    height:40px;
-    top:-430px;
-    right: 0px;
+    height:25px;
+    top:-400px;
+    right: 35px;
 }
 
 
 
 #fondoTextoCreditos{
     position: relative;
-    top: -391px;
-    right: 85px;
+    top: -300px;
+    right: 35px;
     height: 23px;
     margin: 0px;
    
@@ -93,8 +93,8 @@ body{
 #creditosTexto{
     position: relative;
     height:18px;
-    top:-393px;
-    right: 156px;
+    top:-303px;
+    right: 30px;
    
 }
 
