@@ -37,43 +37,41 @@
     </div>
     <div id="pantallaCargaControles">
         <img id="fondoCargaHistoria" src="img/recursosJuego/fondoCargaHistoria.png" />
-        <img id="tituloControles" src="img/recursosJuego/controles.png"/>
-        <img id="imagneControles" src="img/recursosJuego/imagenControles.png"/>
-        <img id="textoRotar" src="img/recursosJuego/rotar.png"/>
+        <img id="tituloControles" src="img/recursosJuego/controles.png" />
+        <img id="imagneControles" src="img/recursosJuego/imagenControles.png" />
+        <img id="textoRotar" src="img/recursosJuego/rotar.png" />
         <img id="lineaRotar" src="img/recursosJuego/lineaRotar.png" />
         <img id="textoBajar" src="img/recursosJuego/bajar.png" />
         <img id="lineaBajar1" src="img/recursosJuego/lineaRotar.png" />
-        <img id="lineaBajar2" src="img/recursosJuego/lineaHorizontalCorta.png"/>
-        <img id="textoDesplazar" src="img/recursosJuego/desplazar.png"/>
-        <img id="lineaDesplazar1" src="img/recursosJuego/lineVertical76px.png"/>
-        <img id="lineaDesplazar2" src="img/recursosJuego/lineaVerticalLarga.png"/>
-        <img id="lineaDesplazar3" src="img/recursosJuego/lineaHorizontal160px.png"/>
-        <img id="lineaDesplazar4" src="img/recursosJuego/lineVertical76px.png"/>
+        <img id="lineaBajar2" src="img/recursosJuego/lineaHorizontalCorta.png" />
+        <img id="textoDesplazar" src="img/recursosJuego/desplazar.png" />
+        <img id="lineaDesplazar1" src="img/recursosJuego/lineVertical76px.png" />
+        <img id="lineaDesplazar2" src="img/recursosJuego/lineaVerticalLarga.png" />
+        <img id="lineaDesplazar3" src="img/recursosJuego/lineaHorizontal160px.png" />
+        <img id="lineaDesplazar4" src="img/recursosJuego/lineVertical76px.png" />
         <img id="fondoBtnAdelanteIniciarJuego" src="img/recursosJuego/fondoBtnAtras.png" />
         <img id="btnAdelanteIniciarJuego" src="img/recursosJuego/atras.png" onclick="iniciarJuego()" />
 
-        
+
     </div>
 
     <div id="juego">
+        <img id="imagenFondoJuego" src="img/recursosJuego/fondoImagenJuego.png" width="466px"/>
+        <img id="fondoPiezaSiguiente" src="img/recursosJuego/fondoPiezaSiguiente.png"/>
         <div id="score"></div>
         <div id="lines"></div>
+        <img id="fondoContadorNivel" src="img/recursosJuego/fondoContadores.png"/>
         <div id="level"></div>
-        <canvas id="nextPiece" width="100" height="100"></canvas>
+        
         <div class="btn_pausa">
             <button onclick="fPause(true)">Pausa</button>
             <button onclick="fPause(false)">Continuar</button>
             <button onclick="rotar()" id="rotar">Rotar</button>
-
-
-
-
-
-
         </div>
 
 
 
+        <canvas id="nextPiece" width="100" height="100"></canvas>
         <canvas id="tetris" width="200" height="400"></canvas>
     </div>
 

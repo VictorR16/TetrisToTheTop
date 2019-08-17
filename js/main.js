@@ -181,7 +181,7 @@ function drawMatrizNext(matriz, offset) {
 /* Dibujar el canvas y las figuras*/
 function draw() {
     var img = new Image();
-    img.src = "img/fondo.jpg";
+    img.src = "img/recursosJuego/fondoTableroTetris.png";
     context.drawImage(img, 0, 0);
 
 
