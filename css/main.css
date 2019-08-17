@@ -1,7 +1,7 @@
 body{
     padding:0px;
     width: 100%;
-    height: 100px;
+    height: 100%;
     margin: 0 px auto;
 }
 
@@ -109,6 +109,11 @@ body{
 
 #pantallaCargaHistoria{
     display: none;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
 }
 #fondoCargaHistoria{
     width: 100%;
@@ -118,23 +123,80 @@ body{
 
 #contenidoCargaHistoria{
     position: relative;
-    top: -392px;
-    right: -67px;
+    top: -492px;
+    right: -40px;
+    width: 70%;
 
 }
 
 #fondoBtnAdelanteJugar{
     position: relative;
-    top: -300px;
+    top: -340px;
     width: 10%;
-    right: -40px;
+    right: -10px;
 }
 
 #btnAdelanteJugar{
     position: relative;
-    top: -305px;
+    top: -345px;
     width: 5%;
-    right: -10px;
+    right: 20px;
+}
+
+#pantallaCargaControles{
+    display: none;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+#tituloControles{
+    position: relative;
+    top: -532px;
+    right: 0px;
+}
+
+#imagneControles{
+    position: relative;
+    top: -435px;
+    right: 0px;
+    width: 270px;
+}
+
+#textoRotar{
+    position: relative;
+    top: -405px;
+    right: 265px;
+    width: 50px;
+}
+
+#lineaRotar{
+    position: relative;
+    top: -430px;
+    right: 300px;
+    width: 2px;
+}
+
+#textoBajar{
+    position: relative;
+    top: -445px;
+    right: 45px;
+    width: 50px;
+}
+#lineaBajar1{
+    position: relative;
+    top: -455px;
+    right: 20px;
+    width: 2px;
+}
+
+#lineaBajar2{
+    position: relative;
+    top: -455px;
+    right: 54px;
+    width: 30px;
 }
 
 #botonesMenu{
