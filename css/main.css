@@ -36,8 +36,8 @@
 
 
 #logoJuego{
-    top:-1417px;
-    right: -260px;
+    top:-600px;
+    right: -130px;
     position: relative;
     width: 40%;
 
@@ -45,9 +45,9 @@
 
 #fondoTextoJugar{
     position: relative;
-    top: -961px;
-    right: 145px;
-    height: 96px;
+    top: -430px;
+    right: 156px;
+    height: 36px;
     margin: 0px;
 }
 
@@ -67,9 +67,9 @@
 
 #imagenJugar{
     position: relative;
-    height:66px;
-    top:-972px;
-    right: 398px;
+    height:40px;
+    top:-430px;
+    right: 156px;
 }
 
 
@@ -80,6 +80,7 @@
     right: 85px;
     height: 23px;
     margin: 0px;
+   
 }
 
 
@@ -89,7 +90,7 @@
     height:18px;
     top:-393px;
     right: 156px;
-
+   
 }
 
 #botonesMenu{
