@@ -181,22 +181,71 @@ body{
 
 #textoBajar{
     position: relative;
-    top: -445px;
-    right: 45px;
+    top: -595px;
+    right: -100px;
     width: 50px;
 }
 #lineaBajar1{
     position: relative;
-    top: -455px;
-    right: 20px;
+    top: -595px;
+    right: -140px;
     width: 2px;
 }
 
 #lineaBajar2{
     position: relative;
-    top: -455px;
-    right: 54px;
+    top: -595px;
+    right: -104px;
     width: 30px;
+}
+
+#textoDesplazar{
+    position: relative;
+    top: -595px;
+    right: -154px;
+    width: 80px;
+}
+
+#lineaDesplazar1{
+    position: relative;
+    top: -620px;
+    right: -80px;
+    width: 2px;
+}
+
+#lineaDesplazar2{
+    position: relative;
+    top: -640px;
+    right: -115px;
+    width: 2px;
+}
+
+#lineaDesplazar3{
+    position: relative;
+    top: -848px;
+    right: 50px;
+    width: 160px; 
+}
+
+#lineaDesplazar4{
+    position: relative;
+    top: -770px;
+    right: 216px;
+    width: 2px;
+}
+
+#fondoBtnAdelanteIniciarJuego{
+    position: relative;
+    top: -505px;
+    width: 10%;
+    right: -140px;
+}
+
+#btnAdelanteIniciarJuego{
+    position: relative;
+    top: -510px;
+    width: 5%;
+    right: -110px;
 }
 
 #botonesMenu{
@@ -204,7 +253,6 @@ body{
     margin: 0px auto;
     top: -150px; 
 }
-
 
 #tetris{
     width: 200px;

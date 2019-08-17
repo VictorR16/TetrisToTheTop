@@ -395,35 +395,41 @@ function fPause(pausar_ahora) {
 }
 
 
-function creditos(){
-    document.getElementById("menu").style.display="none";
-    document.getElementById("creditos").style.display="block";
+function creditos() {
+    document.getElementById("menu").style.display = "none";
+    document.getElementById("creditos").style.display = "block";
 
 }
 
-function atrasCreditos(){
-    document.getElementById("creditos").style.display="none";
-    document.getElementById("menu").style.display="block";
-    
+function atrasCreditos() {
+    document.getElementById("creditos").style.display = "none";
+    document.getElementById("menu").style.display = "block";
+
 }
 
 
 
-function iniciarJuego() {
+function jugar() {
     document.getElementById("pantallaCargaHistoria").style.display = "block";
     document.getElementById("menu").style.display = "none";
-    
-  /**   touch();
+
+
+}
+
+function adelanteCarga() {
+    document.getElementById("pantallaCargaHistoria").style.display = "none";
+    document.getElementById("pantallaCargaControles").style.display = "block";
+
+
+}
+
+function iniciarJuego() {
+    document.getElementById("pantallaCargaControles").style.display = "none";
+    document.getElementById("juego").style.display = "block";
+    touch();
     updateScore();
     playerReset();
     update();
-    */
-}
-
-function adelanteCarga(){
-    document.getElementById("pantallaCargaHistoria").style.display="none";
-    document.getElementById("pantallaCargaControles").style.display = "block";
-
 
 }
 
