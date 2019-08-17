@@ -81,7 +81,7 @@ body{
 
 #fondoTextoCreditos{
     position: relative;
-    top: -300px;
+    top: -270px;
     right: 30px;
     height: 23px;
     margin: 0px;
@@ -93,8 +93,8 @@ body{
 #creditosTexto{
     position: relative;
     height:18px;
-    top:-303px;
-    right: 30px;
+    top:-273px;
+    right: 99px;
    
 }
 
