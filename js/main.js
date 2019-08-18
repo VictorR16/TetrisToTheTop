@@ -484,7 +484,6 @@ function detenerMusica() {
 
     if (pausaMusica %2 === 0) {
         document.getElementById("musicaFondo").play();
-        console.log(pausaMusica);
     } else
         document.getElementById("musicaFondo").pause();
 }
