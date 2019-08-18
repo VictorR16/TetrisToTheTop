@@ -97,12 +97,17 @@
 
 
 
+
         <div class="btn_pausa">
-            <button onclick="fPause(false)">Continuar</button>
             <button onclick="rotar()" id="rotar">Rotar</button>
         </div>
 
+        <div id="ubicacionPausa" onclick="fPause(false)">
+            <img id="fondoPausa" src="img/recursosJuego/fondoPausa.png"/>
+            <img id="juegoPausado" src="img/recursosJuego/juegoPausado.png"/>
+            <img id="textoPausado" src="img/recursosJuego/textoPausa.png"/>
 
+        </div>
 
         <canvas id="nextPiece" width="100" height="100"></canvas>
         <canvas id="tetris" width="200" height="400"></canvas>

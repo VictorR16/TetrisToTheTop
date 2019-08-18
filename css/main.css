@@ -266,6 +266,7 @@ body{
     height: 400px;
     top:-933px;
     right: 50px;
+    z-index: 1;
     
 }
 
@@ -434,3 +435,31 @@ body{
     right: 63px;
 }
 
+
+#ubicacionPausa{
+    display:none;
+    position: relative;
+    top: -933px;
+    right: -95px;
+    height: 400px;
+    width: 240px;
+    z-index: 2;
+}
+
+#fondoPausa{
+    position: relative;
+    top: 149px;
+    right: 0px;
+}
+
+#juegoPausado{
+    position: relative;
+    top: 65px;
+    right: 0px;
+}
+
+#textoPausado{
+    position: relative;
+    top: 79px;
+    right: 0px;
+}

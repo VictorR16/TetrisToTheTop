@@ -321,46 +321,9 @@ function rotar() {
     PlayerRotate();
 }
 
-/* Controles Tactiles */
-function touch() {
-
-    var xIni;
-    var yIni;
-    var canvas = document.getElementById('tetris');
-
-
-    canvas.addEventListener('touchstart', function (e) {
-        if (e.targetTouches.length == 1) {
-            var touch = e.targetTouches[0];
-            xIni = touch.pageX;
-            yIni = touch.pageY;
-
-
-
-        }
-    }, false);
-
-    canvas.addEventListener('touchmove', function (e) {
-        if (e.targetTouches.length == 1) {
-            var touch = e.targetTouches[0];
-            if ((touch.pageX > xIni + 20) && (touch.pageY > yIni - 5) && (touch.pageY < yIni + 5)) {
-                /* alert("el swipe se genera hacia la derecha");¨*/
-                playerMove(1);
-            } else if ((touch.pageX < xIni - 20) && (touch.pageY > yIni - 5) && (touch.pageY < yIni + 5)) {
-                /* alert("el swipe se genera hacia la izquierda"); */
-
-                playerMove(-1);
-            } else if ((touch.pageY > yIni + 30) && (touch.pageX > xIni - 5) && (touch.pageX < xIni + 5)) {
-                playerDrop();
-            }
-        }
-    }, false);
-
-}
-
 
 /* Controles con teclado*/
-function mover(boton){
+function mover(boton) {
     switch (boton) {
         case 40:
             playerDrop();
@@ -391,8 +354,13 @@ function updateScore() {
 function fPause(pausar_ahora) {
     pause = pausar_ahora;
     if (pause) {
-
+        document.getElementById("ubicacionPausa").style.display = "block";
+        document.getElementById("tetris").style.top = "-1333px";
+        document.getElementById("nextPiece").style.top = "-1673px";
     } else {
+        document.getElementById("ubicacionPausa").style.display = "none";
+        document.getElementById("tetris").style.top = "-933px";
+        document.getElementById("nextPiece").style.top = "-1273px";
         update();
     }
 }
@@ -429,7 +397,6 @@ function adelanteCarga() {
 function iniciarJuego() {
     document.getElementById("pantallaCargaControles").style.display = "none";
     document.getElementById("juego").style.display = "block";
-    touch();
     updateScore();
     playerReset();
     update();
@@ -472,12 +439,12 @@ function tiempo() {
 
             }
 
+            if (!pause) {
 
+                s.innerHTML = contador_s;
 
-            s.innerHTML = contador_s;
-
-            contador_s++;
-
+                contador_s++;
+            }
 
 
         }
@@ -488,7 +455,7 @@ function tiempo() {
 
 }
 
-function reiniciarTiempo(){
+function reiniciarTiempo() {
     clearInterval(cronometro);
     s = document.getElementById("segundos");
 
