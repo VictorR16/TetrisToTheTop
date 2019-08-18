@@ -2,7 +2,7 @@ body{
     padding:0px;
     width: 100%;
     height: 100%;
-    margin: 0 px auto;
+    margin: 0 auto;
 }
 
 #menu{
@@ -264,14 +264,14 @@ body{
     position: relative;
     width: 240px;
     height: 400px;
-    top:-734px;
+    top:-884px;
     right: 50px;
     
 }
 
 #fondoPiezaSiguiente{
     position: relative;
-    top: -560px;
+    top: -570px;
     right: 180px;
     width:60px;
     height: 60px;
@@ -279,7 +279,7 @@ body{
 
 #nextPiece{
     position: relative;
-    top: -1060px;
+    top: -1200px;
     right: 70px;
     width:60px;
     height: 60px;
@@ -288,25 +288,71 @@ body{
 
 #fondoContadorNivel{
     position: relative;
-    top: -500px;
-    right: 190px;
+    top: -580px;
+    right: 180px;
+}
+
+#textoNivel{
+    position: relative;
+    top:-567px;
+    right: 218px;
+}
+
+#level{
+    position: relative;
+    width: 50px;
+    top:-613px;
+    right: -15px;
+    color: white;
+}
+
+#fondoContadorPuntos{
+    position: relative;
+    top: -580px;
+    right: 180px;
+}
+
+#textoPuntos{
+    position: relative;
+    top:-565px;
+    right: 218px;
 }
 
 #score{
     width: 50px;
+    position: relative;
+    width: 50px;
+    top:-613px;
+    right: -10px;
+    color: white;
+}
+
+#fondoContadorTiempo{
+    position: relative;
+    top: -580px;
+    right: 180px;
+}
+
+#textoTiempo{
+    position: relative;
+    top:-565px;
+    right: 218px;
+}
+
+#time{
+    width: 50px;
+    position: relative;
+    width: 50px;
+    top:-628px;
+    right: -10px;
+    color: white;
 }
 
 #lines{
     width: 50px;
 }
 
-#level{
-    position: relative;
-    width: 50px;
-    top:-533px;
-    right: -17px;
-    color: white;
-}
+
 
 
 

@@ -275,6 +275,9 @@ function playerReset() {
         player.level = 0;
         rowCount = 20;
         updateScore();
+        reiniciarTiempo();
+        tiempo();
+
 
     }
 }
@@ -384,7 +387,7 @@ function updateScore() {
 
 }
 
-/*  Validar si se pausa y si se despausa */
+/*  Validar si se pausa y si se des pausa */
 function fPause(pausar_ahora) {
     pause = pausar_ahora;
     if (pause) {
@@ -430,6 +433,68 @@ function iniciarJuego() {
     updateScore();
     playerReset();
     update();
+    tiempo();
+
+}
+
+
+function tiempo() {
+
+    contador_s = 0;
+
+    contador_m = 0;
+
+    s = document.getElementById("segundos");
+
+    m = document.getElementById("minutos");
+
+
+
+    cronometro = setInterval(
+
+        function () {
+
+            if (contador_s == 60) {
+
+                contador_s = 0;
+
+                contador_m++;
+
+                m.innerHTML = contador_m;
+
+
+
+                if (contador_m == 60) {
+
+                    contador_m = 0;
+
+                }
+
+            }
+
+
+
+            s.innerHTML = contador_s;
+
+            contador_s++;
+
+
+
+        }
+
+        , 1000);
+
+
+
+}
+
+function reiniciarTiempo(){
+    clearInterval(cronometro);
+    s = document.getElementById("segundos");
+
+    m = document.getElementById("minutos");
+    s.innerHTML = 0;
+    m.innerHTML = 0;
 
 }
 
