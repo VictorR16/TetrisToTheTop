@@ -61,7 +61,7 @@
     </div>
 
     <div id="juego">
-        <img id="imagenFondoJuego" src="img/recursosJuego/fondoImagenJuego.png" width="466px" />
+        <img id="fondoJuego" src="img/recursosJuego/fondoImagenJuego.png" width="466px" />
         <img id="fondoPiezaSiguiente" src="img/recursosJuego/fondoPiezaSiguiente.png" />
         <img id="fondoContadorNivel" src="img/recursosJuego/fondoContadores.png" />
         <img id="textoNivel" src="img/recursosJuego/nivel.png" />
@@ -85,21 +85,13 @@
         <img id="imagenVolumen" src="img/recursosJuego/volumen.png" />
         <img id="imagenPausa" src="img/recursosJuego/botonPausa.png" onclick="fPause(true)"/>
         <img id="fondoHome" src="img/recursosJuego/trazadoBtn1-3.png"/>
-        <img id="imagenHome" src="img/recursosJuego/homeBtn.png" />
+        <img id="imagenHome" src="img/recursosJuego/homeBtn.png" onclick="irMenu()"/> 
         <div id="ubicacionBtnControles" >
-            <img id="btnRotar" src="img/recursosJuego/btnRotar.png" onclick="mover(32);"/>
+            <img id="btnRotar" src="img/recursosJuego/btnRotar.png" onclick="mover(32)"/>
             <img id="btnArriba" src="img/recursosJuego/btnArriba.png"/>
-            <img id="btnDerecha" src="img/recursosJuego/btnDerecha.png" onclick="mover(39);"/>
-            <img id="btnIzquierda" src="img/recursosJuego/btnIzquierda.png" onclick="mover(37);"/>
-            <img id="btnAbajo" src="img/recursosJuego/btnAbajo.png" onclick="mover(40);"/>   
-        </div>
-        
-
-
-
-
-        <div class="btn_pausa">
-            <button onclick="rotar()" id="rotar">Rotar</button>
+            <img id="btnDerecha" src="img/recursosJuego/btnDerecha.png" onclick="mover(39)"/>
+            <img id="btnIzquierda" src="img/recursosJuego/btnIzquierda.png" onclick="mover(37)"/>
+            <img id="btnAbajo" src="img/recursosJuego/btnAbajo.png" onclick="mover(40)"/>   
         </div>
 
         <div id="ubicacionPausa" onclick="fPause(false)">

@@ -404,6 +404,18 @@ function iniciarJuego() {
 
 }
 
+function irMenu() {
+    document.getElementById("juego").style.display = "none";
+    document.getElementById("ubicacionPausa").style.display = "none";
+    document.getElementById("menu").style.display = "block";
+    document.getElementById("tetris").style.top = "-933px";
+    document.getElementById("nextPiece").style.top = "-1273px";
+    if(pause){
+        pause = false;
+    }
+    reiniciarTiempo();
+}
+
 
 function tiempo() {
 
