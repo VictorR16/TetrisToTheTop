@@ -3,6 +3,7 @@ let dropInterval = 1000;
 let dropCounter = 0;
 const grid = createMatriz(10, 20);
 let pause = false;
+let pausaMusica = 0;
 let rowCountB = 20;
 const canvas = document.getElementById("tetris");
 const context = canvas.getContext("2d");
@@ -410,7 +411,7 @@ function irMenu() {
     document.getElementById("menu").style.display = "block";
     document.getElementById("tetris").style.top = "-933px";
     document.getElementById("nextPiece").style.top = "-1273px";
-    if(pause){
+    if (pause) {
         pause = false;
     }
     reiniciarTiempo();
@@ -477,3 +478,13 @@ function reiniciarTiempo() {
 
 }
 
+function detenerMusica() {
+    
+    pausaMusica ++;
+
+    if (pausaMusica %2 === 0) {
+        document.getElementById("musicaFondo").play();
+        console.log(pausaMusica);
+    } else
+        document.getElementById("musicaFondo").pause();
+}

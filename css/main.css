@@ -6,6 +6,13 @@ body{
     Overflow:hidden;
 }
 
+@font-face{
+    font-family: 'Geniso';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../recursos/tipografia/GENISO.ttf');
+}
+
 #menu{
     display: block;
     position: absolute;
@@ -306,6 +313,7 @@ body{
     top:-493px;
     right: -9px;
     color: white;
+    font-family: 'Geniso';
 }
 
 #fondoContadorPuntos{
@@ -327,6 +335,7 @@ body{
     top:-495px;
     right: -10px;
     color: white;
+    font-family: 'Geniso';
 }
 
 #fondoContadorTiempo{
@@ -348,6 +357,7 @@ body{
     top:-508px;
     right: -10px;
     color: white;
+    font-family: 'Geniso';
 }
 #fondoContadorLineas{
     position: relative;
@@ -368,6 +378,7 @@ body{
     top:-518px;
     right: -10px;
     color: white;
+    font-family: 'Geniso';
 }
 
 #fondoVolumen{

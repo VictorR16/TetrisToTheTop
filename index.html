@@ -16,6 +16,7 @@
 
 <body>
 
+    <audio id="musicaFondo" src="recursos/musica/musica.mp3" autoplay loop></audio>
     <div id="menu">
 
         <img id="fondoMenu" src="img/recursosJuego/fondoMenu.png" />
@@ -82,7 +83,7 @@
         <img id="textoLineas" src="img/recursosJuego/lineas.png" />
         <div id="lines"></div>
         <img id="fondoVolumen" src="img/recursosJuego/trazadoBtn1-3.png"/>
-        <img id="imagenVolumen" src="img/recursosJuego/volumen.png" />
+        <img id="imagenVolumen" src="img/recursosJuego/volumen.png" onclick="detenerMusica()" />
         <img id="imagenPausa" src="img/recursosJuego/botonPausa.png" onclick="fPause(true)"/>
         <img id="fondoHome" src="img/recursosJuego/trazadoBtn1-3.png"/>
         <img id="imagenHome" src="img/recursosJuego/homeBtn.png" onclick="irMenu()"/> 
