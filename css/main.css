@@ -264,7 +264,7 @@ body{
     position: relative;
     width: 240px;
     height: 400px;
-    top:-884px;
+    top:-933px;
     right: 50px;
     
 }
@@ -272,14 +272,14 @@ body{
 #fondoPiezaSiguiente{
     position: relative;
     top: -570px;
-    right: 180px;
+    right: 149px;
     width:60px;
     height: 60px;
 }
 
 #nextPiece{
     position: relative;
-    top: -1200px;
+    top: -1273px;
     right: 70px;
     width:60px;
     height: 60px;
@@ -288,33 +288,33 @@ body{
 
 #fondoContadorNivel{
     position: relative;
-    top: -580px;
-    right: 180px;
+    top: -461px;
+    right: 217px;
 }
 
 #textoNivel{
     position: relative;
-    top:-567px;
-    right: 218px;
+    top:-448px;
+    right: 255px;
 }
 
 #level{
     position: relative;
     width: 50px;
-    top:-613px;
-    right: -15px;
+    top:-493px;
+    right: -9px;
     color: white;
 }
 
 #fondoContadorPuntos{
     position: relative;
-    top: -580px;
+    top: -465px;
     right: 180px;
 }
 
 #textoPuntos{
     position: relative;
-    top:-565px;
+    top:-450px;
     right: 218px;
 }
 
@@ -322,20 +322,20 @@ body{
     width: 50px;
     position: relative;
     width: 50px;
-    top:-613px;
+    top:-495px;
     right: -10px;
     color: white;
 }
 
 #fondoContadorTiempo{
     position: relative;
-    top: -580px;
+    top: -460px;
     right: 180px;
 }
 
 #textoTiempo{
     position: relative;
-    top:-565px;
+    top:-445px;
     right: 218px;
 }
 
@@ -343,16 +343,60 @@ body{
     width: 50px;
     position: relative;
     width: 50px;
-    top:-628px;
+    top:-508px;
     right: -10px;
     color: white;
+}
+#fondoContadorLineas{
+    position: relative;
+    top: -490px;
+    right: 180px;
+}
+
+#textoLineas{
+    position: relative;
+    top:-475px;
+    right: 218px;
 }
 
 #lines{
     width: 50px;
+    position: relative;
+    width: 50px;
+    top:-518px;
+    right: -10px;
+    color: white;
 }
 
+#fondoVolumen{
+    position: relative;
+    top: -480px;
+    right: 130px;
+}
 
+#imagenVolumen{
+    position: relative;
+    top:-485px;
+    right: 163px;
+}
+
+#imagenPausa{
+    position: relative;
+    top:-440px;
+    right: 195px;
+}
+
+#fondoHome{
+    position: relative;
+    top: -401px;
+    right: 231px;
+}
+
+#imagenHome{
+    position: relative;
+    top:-407px;
+    right: 261px;
+}
 
 
 
