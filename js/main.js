@@ -360,8 +360,8 @@ function touch() {
 
 
 /* Controles con teclado*/
-document.addEventListener("keydown", event => {
-    switch (event.keyCode) {
+function mover(boton){
+    switch (boton) {
         case 40:
             playerDrop();
             break;
@@ -377,7 +377,7 @@ document.addEventListener("keydown", event => {
 
 
     };
-})
+}
 
 /* Se actualizan los puntajes en el juego */
 function updateScore() {

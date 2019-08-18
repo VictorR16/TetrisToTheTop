@@ -83,15 +83,21 @@
         <div id="lines"></div>
         <img id="fondoVolumen" src="img/recursosJuego/trazadoBtn1-3.png"/>
         <img id="imagenVolumen" src="img/recursosJuego/volumen.png" />
-        <img id="imagenPausa" src="img/recursosJuego/botonPausa.png" />
+        <img id="imagenPausa" src="img/recursosJuego/botonPausa.png" onclick="fPause(true)"/>
         <img id="fondoHome" src="img/recursosJuego/trazadoBtn1-3.png"/>
         <img id="imagenHome" src="img/recursosJuego/homeBtn.png" />
+        <div id="ubicacionBtnControles" >
+            <img id="btnRotar" src="img/recursosJuego/btnRotar.png" onclick="mover(32);"/>
+            <img id="btnArriba" src="img/recursosJuego/btnArriba.png"/>
+            <img id="btnDerecha" src="img/recursosJuego/btnDerecha.png" onclick="mover(39);"/>
+            <img id="btnIzquierda" src="img/recursosJuego/btnIzquierda.png" onclick="mover(37);"/>
+            <img id="btnAbajo" src="img/recursosJuego/btnAbajo.png" onclick="mover(40);"/>   
+        </div>
         
 
 
 
         <div class="btn_pausa">
-            <button onclick="fPause(true)">Pausa</button>
             <button onclick="fPause(false)">Continuar</button>
             <button onclick="rotar()" id="rotar">Rotar</button>
         </div>

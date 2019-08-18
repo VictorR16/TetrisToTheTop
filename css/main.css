@@ -398,5 +398,39 @@ body{
     right: 261px;
 }
 
+#ubicacionBtnControles{
+    position: relative;
+    top:-435px;
+    right: 0px;
+}
 
+#btnRotar{
+    position: relative;
+    top:0px;
+    right: 0px;
+}
+
+#btnArriba{
+    position: relative;
+    top:-15px;
+    right: -63px;
+}
+
+#btnDerecha{
+    position: relative;
+    top:0px;
+    right: -46px;
+}
+
+#btnIzquierda{
+    position: relative;
+    top:0px;
+    right: 46px;
+}
+
+#btnAbajo{
+    position: relative;
+    top:29px;
+    right: 63px;
+}
 
