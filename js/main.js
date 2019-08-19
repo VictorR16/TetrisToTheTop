@@ -16,14 +16,13 @@ contextNext.scale(19, 19);
 
 const colors = [
     null,
-    'red',
-    'blue',
-    'violet',
-    'green',
-    'purple',
-    'orange',
-    'pink',
-    'black'
+    '#C8BA54',
+    '#B07D38',
+    '#B07D38',
+    '#7B567B',
+    '#3E6783',
+    '#618C8E',
+    '#486D45'
 
 ];
 
@@ -89,10 +88,6 @@ function createPiece(tipo) {
                 [0, 0, 0]
             ];
             break;
-        case "B":
-            return [
-                [8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
-            ];
     }
 
 
@@ -402,6 +397,13 @@ function iniciarJuego() {
     playerReset();
     update();
     tiempo();
+    player.score = 0;
+    player.lines = 0;
+    player.level = 0;
+    rowCount = 20;
+    updateScore();
+    reiniciarTiempo();
+
 
 }
 
@@ -479,10 +481,10 @@ function reiniciarTiempo() {
 }
 
 function detenerMusica() {
-    
-    pausaMusica ++;
 
-    if (pausaMusica %2 === 0) {
+    pausaMusica++;
+
+    if (pausaMusica % 2 === 0) {
         document.getElementById("musicaFondo").play();
     } else
         document.getElementById("musicaFondo").pause();

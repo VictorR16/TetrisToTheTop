@@ -3,13 +3,14 @@ body{
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    Overflow:hidden;
+    Overflow-x:hidden;
+    overflow-y: hidden;
 }
 
 @font-face{
     font-family: 'Geniso';
     font-style: normal;
-    font-weight: normal;
+    font-weight: bolder;
     src: url('../recursos/tipografia/GENISO.ttf');
 }
 
@@ -91,24 +92,24 @@ body{
 
 #creditosContenido{
     position: relative;
-    top: -590px;
-    width: 70%;
+    top: -505px;
     right: -30px;
+    width: 55%;
 
 }
 
 #fondoBtnAtrasCreditos{
     position: relative;
-    top: -540px;
+    top: -460px;
     width: 10%;
-    right: 250px;
+    right: 200px;
 }
 
 #btnAtrasCreditos{
     position: relative;
-    top: -547px;
+    top: -467px;
     width: 5%;
-    right: 282px;
+    right: 232px;
     transform: rotate(200grad);
 }
 
@@ -118,7 +119,7 @@ body{
     text-align: center;
     width: 100%;
     height: 100%;
-    margin: 0px;
+    margin: 0px auto;
 }
 #fondoCargaHistoria{
     width: 100%;
@@ -128,9 +129,8 @@ body{
 
 #contenidoCargaHistoria{
     position: relative;
-    top: -492px;
-    right: -40px;
-    width: 70%;
+    top: -462px;
+    right: -35px;
 
 }
 
@@ -154,7 +154,7 @@ body{
     text-align: center;
     width: 100%;
     height: 100%;
-    margin: 0px;
+    margin: 0px auto;
 }
 
 #tituloControles{
@@ -165,92 +165,97 @@ body{
 
 #imagneControles{
     position: relative;
-    top: -435px;
-    right: 0px;
-    width: 270px;
+    top: -388px;
+    right: -60px;
+    width: 200px;
 }
 
 #textoRotar{
     position: relative;
-    top: -405px;
-    right: 265px;
+    top: -362px;
+    right: 144px;
     width: 50px;
 }
 
 #lineaRotar{
     position: relative;
-    top: -430px;
-    right: 300px;
+    top: -388px;
+    right: 175px;
     width: 2px;
+    height: 30px;
 }
 
 #textoBajar{
     position: relative;
-    top: -595px;
-    right: -100px;
+    top: -343px;
+    right: 144px;
     width: 50px;
 }
 #lineaBajar1{
     position: relative;
-    top: -595px;
-    right: -140px;
+    top: -351px;
+    right: 117px;
     width: 2px;
+    height: 33px;
 }
 
 #lineaBajar2{
     position: relative;
-    top: -595px;
-    right: -104px;
+    top: -351px;
+    right: 151px;
     width: 30px;
 }
 
 #textoDesplazar{
     position: relative;
-    top: -595px;
-    right: -154px;
+    top: -520px;
+    right: -213px;
     width: 80px;
 }
 
 #lineaDesplazar1{
     position: relative;
     top: -620px;
-    right: -80px;
+    right: -60px;
     width: 2px;
 }
 
 #lineaDesplazar2{
     position: relative;
-    top: -640px;
-    right: -115px;
+    top: -552px;
+    right: -193px;
     width: 2px;
+    height: 146px;
 }
 
 #lineaDesplazar3{
     position: relative;
-    top: -848px;
-    right: 50px;
-    width: 160px; 
+    top: -696px;
+    right: -48px;
+    width: 141px;
+    height: 2px; 
 }
 
 #lineaDesplazar4{
     position: relative;
-    top: -770px;
-    right: 216px;
+    top: -545px;
+    right: 22px;
     width: 2px;
+    height: 30px;
 }
 
 #fondoBtnAdelanteIniciarJuego{
     position: relative;
-    top: -505px;
+    top: -386px;
     width: 10%;
-    right: -140px;
+    right: -6px;
 }
 
 #btnAdelanteIniciarJuego{
     position: relative;
-    top: -510px;
+    top: -392px;
     width: 5%;
-    right: -110px;
+    right: 23px;
 }
 
 #juego{
@@ -314,6 +319,7 @@ body{
     right: -9px;
     color: white;
     font-family: 'Geniso';
+    font-weight: 900;
 }
 
 #fondoContadorPuntos{
@@ -336,6 +342,7 @@ body{
     right: -10px;
     color: white;
     font-family: 'Geniso';
+    font-weight: 900;
 }
 
 #fondoContadorTiempo{
@@ -358,6 +365,7 @@ body{
     right: -10px;
     color: white;
     font-family: 'Geniso';
+    font-weight: 900;
 }
 #fondoContadorLineas{
     position: relative;
@@ -379,6 +387,7 @@ body{
     right: -10px;
     color: white;
     font-family: 'Geniso';
+    font-weight: 900;
 }
 
 #fondoVolumen{
