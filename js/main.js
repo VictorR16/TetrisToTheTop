@@ -4,7 +4,6 @@ let dropCounter = 0;
 const grid = createMatriz(10, 20);
 let pause = false;
 let pausaMusica = 0;
-let rowCountB = 20;
 const canvas = document.getElementById("tetris");
 const context = canvas.getContext("2d");
 context.scale(20, 20);
@@ -180,11 +179,6 @@ function draw() {
     img.src = "img/recursosJuego/fondoTableroTetris.png";
     context.drawImage(img, 0, 0);
 
-
-    context.fillStyle = "#000000";
-    context.fillRect(0, rowCountB, 10, 10);
-
-
     /*  context.fillStyle = "#ffffff";*/
     /* context.fillRect(0, 0, canvas.width, canvas.height);*/
     drawMatriz(grid, { x: 0, y: 0 });
@@ -269,10 +263,8 @@ function playerReset() {
         player.score = 0;
         player.lines = 0;
         player.level = 0;
-        rowCount = 20;
-        updateScore();
         reiniciarTiempo();
-        tiempo();
+        document.getElementById("pantallaDerrota").style.display="block";
 
 
     }
@@ -393,6 +385,7 @@ function adelanteCarga() {
 function iniciarJuego() {
     document.getElementById("pantallaCargaControles").style.display = "none";
     document.getElementById("juego").style.display = "block";
+    document.getElementById("pantallaDerrota").style.display ="none";
     updateScore();
     playerReset();
     update();
@@ -400,7 +393,6 @@ function iniciarJuego() {
     player.score = 0;
     player.lines = 0;
     player.level = 0;
-    rowCount = 20;
 
 
 
@@ -412,6 +404,7 @@ function irMenu() {
     document.getElementById("menu").style.display = "block";
     document.getElementById("tetris").style.top = "-1100px";
     document.getElementById("nextPiece").style.top = "-1440px";
+    document.getElementById("pantallaDerrota").style.display ="none";
     if (pause) {
         pause = false;
     }

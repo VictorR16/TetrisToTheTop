@@ -479,3 +479,44 @@ body{
     top: 79px;
     right: 0px;
 }
+
+
+#pantallaDerrota{
+    display: none;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    top: 0px;
+}
+
+#fondoDerrota{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    top: 0px;
+    z-index: 2;
+}
+
+#ubicacionBtnPerdidia{
+    position: relative;
+    top: -70px;
+    right: 0px;
+    z-index: 2;
+}
+#botonHomePerdida{
+    position: relative;
+    top: -90px;
+    right: -100px;
+    z-index: 2; 
+}
+
+
+#botonJugarPerdida{
+    position: relative;
+    top: -90px;
+    right: 110px;
+    z-index: 2;
+}
