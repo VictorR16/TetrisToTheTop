@@ -277,23 +277,16 @@ body{
     position: relative;
     width: 240px;
     height: 400px;
-    top:-933px;
+    top:-1100px;
     right: 4px;
     z-index: 1;
     
 }
 
-#fondoPiezaSiguiente{
-    position: relative;
-    top: -545px;
-    right: 90px;
-    width:60px;
-    height: 60px;
-}
 
 #nextPiece{
     position: relative;
-    top: -1273px;
+    top: -1440px;
     right: 20px;
     width:60px;
     height: 60px;
@@ -303,20 +296,20 @@ body{
 #fondoContadorNivel{
     position: relative;
     top: -461px;
-    right: 162px;
+    right: 125px;
 }
 
 #textoNivel{
     position: relative;
     top:-448px;
-    right: 200px;
+    right: 168px;
 }
 
 #level{
     position: relative;
     width: 50px;
     top:-493px;
-    right: -9px;
+    right: -12px;
     color: white;
     font-family: 'Geniso';
     font-weight: 900;
@@ -347,21 +340,21 @@ body{
 
 #fondoContadorTiempo{
     position: relative;
-    top: -460px;
-    right: 124px;
+    top: -380px;
+    right: 125px;
 }
 
 #textoTiempo{
     position: relative;
-    top:-445px;
-    right: 172px;
+    top:-363px;
+    right: 168px;
 }
 
 #time{
     width: 50px;
     position: relative;
     width: 50px;
-    top:-508px;
+    top:-427px;
     right: -10px;
     color: white;
     font-family: 'Geniso';
@@ -369,13 +362,13 @@ body{
 }
 #fondoContadorLineas{
     position: relative;
-    top: -490px;
+    top: -563px;
     right: 125px;
 }
 
 #textoLineas{
     position: relative;
-    top:-475px;
+    top:-547px;
     right: 168px;
 }
 
@@ -383,8 +376,8 @@ body{
     width: 50px;
     position: relative;
     width: 50px;
-    top:-518px;
-    right: -10px;
+    top:-595px;
+    right: -12px;
     color: white;
     font-family: 'Geniso';
     font-weight: 900;
@@ -392,31 +385,31 @@ body{
 
 #fondoVolumen{
     position: relative;
-    top: -480px;
+    top: -430px;
     right: 83px;
 }
 
 #imagenVolumen{
     position: relative;
-    top:-485px;
+    top:-435px;
     right: 115px;
 }
 
 #imagenPausa{
     position: relative;
-    top:-440px;
+    top:-390px;
     right: 147px;
 }
 
 #fondoHome{
     position: relative;
-    top: -401px;
+    top: -351px;
     right: 184px;
 }
 
 #imagenHome{
     position: relative;
-    top:-407px;
+    top:-357px;
     right: 215px;
 }
 
@@ -430,39 +423,39 @@ body{
 
 #btnRotar{
     position: relative;
-    top:0px;
-    right: 0px;
+    top:-15px;
+    right: 57px;
 }
 
 #btnArriba{
     position: relative;
-    top:-15px;
-    right: -63px;
+    top:-30px;
+    right: 1px;
 }
 
 #btnDerecha{
     position: relative;
-    top:0px;
-    right: -46px;
+    top:-59px;
+    right: -114px;
 }
 
 #btnIzquierda{
     position: relative;
-    top:0px;
+    top:-59px;
     right: 46px;
 }
 
 #btnAbajo{
     position: relative;
-    top:29px;
-    right: 63px;
+    top:-86px;
+    right: -33px;
 }
 
 
 #ubicacionPausa{
     display:none;
     position: relative;
-    top: -933px;
+    top: -1100px;
     right: -95px;
     height: 400px;
     width: 240px;
