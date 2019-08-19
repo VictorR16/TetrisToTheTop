@@ -401,8 +401,7 @@ function iniciarJuego() {
     player.lines = 0;
     player.level = 0;
     rowCount = 20;
-    updateScore();
-    reiniciarTiempo();
+    
 
 
 }
