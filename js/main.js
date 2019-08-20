@@ -177,9 +177,13 @@ function drawMatrizNext(matriz, offset) {
 /* Dibujar el canvas y las figuras*/
 function draw() {
     var img = new Image();
-    img.src = "img/recursosJuego/fondoTableroTetris.png";
-    context.drawImage(img, 0, 0);
-
+    if (player.level == 0) {
+        img.src = "img/recursosJuego/fondoTableroTetris.png";
+        context.drawImage(img, 0, 0);
+    } else if (player.level >= 1) {
+        img.src = "img/recursosJuego/fondo2.png";
+        context.drawImage(img, 0, 0);
+    }
     /*  context.fillStyle = "#ffffff";*/
     /* context.fillRect(0, 0, canvas.width, canvas.height);*/
     drawMatriz(grid, { x: 0, y: 0 });
@@ -190,6 +194,7 @@ function draw() {
 }
 /* Funcion para eliminar filas si estan completas */
 function gridSweep() {
+    const fondoTetra = 'CDEFGH';
     let rowCount = 1;
     outer: for (let y = grid.length - 1; y > 0; --y) {
         for (let x = 0; x < grid[y].length; ++x) {
@@ -207,7 +212,11 @@ function gridSweep() {
         player.score += rowCount * 10;
         player.lines++;
         rowCount *= 2;
-        if (player.lines % 3 === 0) player.level++;
+        if (player.lines % 3 === 0) {
+            player.level++;
+            tetra(fondoTetra[fondoTetra.length * Math.random() | 0]);
+
+        }
     }
 
 
@@ -266,7 +275,7 @@ function playerReset() {
         player.level = 0;
         reiniciarTiempo();
         document.getElementById("pantallaDerrota").style.display = "block";
-        document.getElementById("tetra").style.display="none";
+        document.getElementById("tetra").style.display = "none";
 
 
     }
@@ -392,7 +401,9 @@ function iniciarJuego() {
     document.getElementById("pantallaCargaControles").style.display = "none";
     document.getElementById("juego").style.display = "block";
     document.getElementById("pantallaDerrota").style.display = "none";
-    document.getElementById("tetra").style.display ="none";
+    document.getElementById("tetra").style.display = "none";
+    player.matriz = null;
+    player.next = null;
     mostrarTetra(false);
     updateScore();
     playerReset();
@@ -406,14 +417,14 @@ function iniciarJuego() {
 
 }
 
-function limpiarPantalla(){
+function limpiarPantalla() {
     grid.forEach(row => row.fill(0));
-        player.score = 0;
-        player.lines = 0;
-        player.level = 0;
-        rowCount = 20;
-        updateScore();
-        reiniciarTiempo();
+    player.score = 0;
+    player.lines = 0;
+    player.level = 0;
+    rowCount = 20;
+    updateScore();
+    reiniciarTiempo();
 }
 
 function irMenu() {
@@ -423,7 +434,7 @@ function irMenu() {
     document.getElementById("tetris").style.top = "-1105px";
     document.getElementById("nextPiece").style.top = "-1440px";
     document.getElementById("pantallaDerrota").style.display = "none";
-    document.getElementById("tetra").style.display="none";
+    document.getElementById("tetra").style.display = "none";
     if (pause) {
         pause = false;
     }
@@ -472,7 +483,7 @@ function tiempo() {
                 contador_s++;
             }
 
-            if (contador_s == 2) {
+            if (contador_s == 2 && contador_m == 0) {
                 tetra("A");
             }
 
