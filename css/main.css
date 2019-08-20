@@ -399,6 +399,7 @@ body{
     position: relative;
     top:-390px;
     right: 147px;
+    display: inline;
 }
 
 #fondoHome{
@@ -519,4 +520,23 @@ body{
     top: -90px;
     right: 110px;
     z-index: 2;
+}
+
+
+#tetra{
+    position: relative;
+    margin: 0 auto;
+    top: -1060px;
+    right: 28px;
+    z-index: 2;
+    width: 100px;
+    display: none;
+}
+
+#imagenTetra{
+    position: relative;
+    top:0px;
+    width: 200px;
+    height: 200px;
+
 }

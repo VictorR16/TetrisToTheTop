@@ -4,6 +4,7 @@ let dropCounter = 0;
 const grid = createMatriz(10, 20);
 let pause = false;
 let pausaMusica = 0;
+let btnPausa = 0;
 const canvas = document.getElementById("tetris");
 const context = canvas.getContext("2d");
 context.scale(20, 20);
@@ -264,7 +265,8 @@ function playerReset() {
         player.lines = 0;
         player.level = 0;
         reiniciarTiempo();
-        document.getElementById("pantallaDerrota").style.display="block";
+        document.getElementById("pantallaDerrota").style.display = "block";
+        document.getElementById("tetra").style.display="none";
 
 
     }
@@ -341,14 +343,18 @@ function updateScore() {
 /*  Validar si se pausa y si se des pausa */
 function fPause(pausar_ahora) {
     pause = pausar_ahora;
+
     if (pause) {
+
         document.getElementById("ubicacionPausa").style.display = "block";
         document.getElementById("tetris").style.top = "-1500px";
         document.getElementById("nextPiece").style.top = "-1840px";
+
     } else {
         document.getElementById("ubicacionPausa").style.display = "none";
         document.getElementById("tetris").style.top = "-1100px";
         document.getElementById("nextPiece").style.top = "-1440px";
+        document.getElementById("imagenTetra").style.top = "-1060";
         update();
     }
 }
@@ -385,7 +391,9 @@ function adelanteCarga() {
 function iniciarJuego() {
     document.getElementById("pantallaCargaControles").style.display = "none";
     document.getElementById("juego").style.display = "block";
-    document.getElementById("pantallaDerrota").style.display ="none";
+    document.getElementById("pantallaDerrota").style.display = "none";
+    document.getElementById("tetra").style.display ="none";
+    mostrarTetra(false);
     updateScore();
     playerReset();
     update();
@@ -398,17 +406,28 @@ function iniciarJuego() {
 
 }
 
+function limpiarPantalla(){
+    grid.forEach(row => row.fill(0));
+        player.score = 0;
+        player.lines = 0;
+        player.level = 0;
+        rowCount = 20;
+        updateScore();
+        reiniciarTiempo();
+}
+
 function irMenu() {
     document.getElementById("juego").style.display = "none";
     document.getElementById("ubicacionPausa").style.display = "none";
     document.getElementById("menu").style.display = "block";
-    document.getElementById("tetris").style.top = "-1100px";
+    document.getElementById("tetris").style.top = "-1105px";
     document.getElementById("nextPiece").style.top = "-1440px";
-    document.getElementById("pantallaDerrota").style.display ="none";
+    document.getElementById("pantallaDerrota").style.display = "none";
+    document.getElementById("tetra").style.display="none";
     if (pause) {
         pause = false;
     }
-    reiniciarTiempo();
+    limpiarPantalla();
 }
 
 
@@ -453,6 +472,10 @@ function tiempo() {
                 contador_s++;
             }
 
+            if (contador_s == 2) {
+                tetra("A");
+            }
+
 
         }
 
@@ -483,4 +506,143 @@ function detenerMusica() {
         document.getElementById("musicaFondo").pause();
         document.getElementById("imagenVolumen").src = "img/recursosJuego/icono_musica off.png";
     }
+}
+
+
+
+function tetraPausa(activa) {
+    if (activa) {
+        document.getElementById("imagenPausa").style.display = "none";
+        document.getElementById("fondoVolumen").style.right = "106px";
+        document.getElementById("imagenVolumen").style.right = "136px";
+        document.getElementById("fondoHome").style.right = "167px";
+        document.getElementById("imagenHome").style.right = "198px";
+    } else {
+        document.getElementById("imagenPausa").style.display = "inline";
+        document.getElementById("fondoVolumen").style.right = "83px";
+        document.getElementById("imagenVolumen").style.right = "115px";
+        document.getElementById("fondoHome").style.right = "184px";
+        document.getElementById("imagenHome").style.right = "215px";
+    }
+}
+
+
+function mostrarTetra(activa) {
+    if (activa) {
+        document.getElementById("tetra").style.display = "block";
+        document.getElementById("tetris").style.top = "-1305px";
+        document.getElementById("nextPiece").style.top = "-1645px";
+    } else {
+        document.getElementById("tetra").style.display = "none";
+        document.getElementById("tetris").style.top = "-1105px";
+        document.getElementById("nextPiece").style.top = "-1440px";
+    }
+
+}
+
+function tetra(caso) {
+    let tiempoInvocacion = contador_s;
+    let duracionTetra = 5;
+
+
+    cronometroTetra = setInterval(
+
+        function () {
+            switch (caso) {
+                case "A":
+                    document.getElementById("imagenTetra").src = "img/tetra/8.png";
+
+                    tetraPausa(true);
+                    mostrarTetra(true);
+
+
+
+                    if ((contador_s - tiempoInvocacion) > duracionTetra) {
+
+                        tetraPausa(false);
+                        mostrarTetra(false);
+                        caso = null;
+                    }
+                    break;
+                case "B":
+                    document.getElementById("imagenTetra").src = "img/tetra/1.png";
+                    tetraPausa(true);
+                    mostrarTetra(true);
+
+                    if ((contador_s - tiempoInvocacion) > duracionTetra) {
+                        tetraPausa(false);
+                        mostrarTetra(false);
+                        caso = null;
+                    }
+                    break;
+                case "C":
+                    document.getElementById("imagenTetra").src = "img/tetra/2.png";
+                    tetraPausa(true);
+                    mostrarTetra(true);
+
+                    if ((contador_s - tiempoInvocacion) > duracionTetra) {
+                        tetraPausa(false);
+                        mostrarTetra(false);
+                        caso = null;
+                    }
+                    break;
+                case "D":
+                    document.getElementById("imagenTetra").src = "img/tetra/3.png";
+                    tetraPausa(true);
+                    mostrarTetra(true);
+
+                    if ((contador_s - tiempoInvocacion) > duracionTetra) {
+                        tetraPausa(false);
+                        mostrarTetra(false);
+                        caso = null;
+                    }
+                    break;
+                case "E":
+                    document.getElementById("imagenTetra").src = "img/tetra/4.png";
+                    tetraPausa(true);
+                    mostrarTetra(true);
+
+                    if ((contador_s - tiempoInvocacion) > duracionTetra) {
+                        tetraPausa(false);
+                        mostrarTetra(false);
+                        caso = null;
+                    }
+                    break;
+                case "F":
+                    document.getElementById("imagenTetra").src = "img/tetra/5.png";
+                    tetraPausa(true);
+                    mostrarTetra(true);
+
+                    if ((contador_s - tiempoInvocacion) > duracionTetra) {
+                        tetraPausa(false);
+                        mostrarTetra(false);
+                        caso = null;
+                    }
+                    break;
+                case "G":
+                    document.getElementById("imagenTetra").src = "img/tetra/6.png";
+                    tetraPausa(true);
+                    mostrarTetra(true);
+
+                    if ((contador_s - tiempoInvocacion) > duracionTetra) {
+                        tetraPausa(false);
+                        mostrarTetra(false);
+                        caso = null;
+                    }
+                    break;
+                case "H":
+                    document.getElementById("imagenTetra").src = "img/tetra/7.png";
+                    tetraPausa(true);
+                    mostrarTetra(true);
+
+                    if ((contador_s - tiempoInvocacion) > duracionTetra) {
+                        tetraPausa(false);
+                        mostrarTetra(false);
+                        caso = null;
+                    }
+                    break;
+            }
+            cronometroTetra++;
+        }
+        , 1000);
 }
