@@ -1,0 +1,542 @@
+body{
+    padding:0px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    Overflow-x:hidden;
+    overflow-y: hidden;
+}
+
+@font-face{
+    font-family: 'Geniso';
+    font-style: normal;
+    font-weight: bolder;
+    src: url('../recursos/tipografia/GENISO.ttf');
+}
+
+#menu{
+    display: block;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+#creditos{
+    display: none;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+
+#fondoMenu{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+}
+
+#fondoCreditos{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+
+#logoJuego{
+    top:-480px;
+    right: -70px;
+    position: relative;
+    width: 50%;
+
+}
+
+#fondoTextoJugar{
+    position: relative;
+    top: -330px;
+    right: 85px;
+    height: 36px;
+    margin: 0px;
+}
+
+#imagenJugar{
+    position: relative;
+    height:25px;
+    top:-363px;
+    right: -80px;
+}
+
+
+
+#fondoTextoCreditos{
+    position: relative;
+    top: -300px;
+    right: 0px;
+    height: 23px;
+    margin: 0px;
+   
+}
+
+#creditosTexto{
+    position: relative;
+    height:18px;
+    top:-303px;
+    right: 70px;
+   
+}
+
+
+#creditosContenido{
+    position: relative;
+    top: -505px;
+    right: -30px;
+    width: 55%;
+
+}
+
+#fondoBtnAtrasCreditos{
+    position: relative;
+    top: -460px;
+    width: 10%;
+    right: 200px;
+}
+
+#btnAtrasCreditos{
+    position: relative;
+    top: -467px;
+    width: 5%;
+    right: 232px;
+    transform: rotate(200grad);
+}
+
+#pantallaCargaHistoria{
+    display: none;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+}
+#fondoCargaHistoria{
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+}
+
+#contenidoCargaHistoria{
+    position: relative;
+    top: -462px;
+    right: -35px;
+
+}
+
+#fondoBtnAdelanteJugar{
+    position: relative;
+    top: -340px;
+    width: 10%;
+    right: -10px;
+}
+
+#btnAdelanteJugar{
+    position: relative;
+    top: -345px;
+    width: 5%;
+    right: 20px;
+}
+
+#pantallaCargaControles{
+    display: none;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+}
+
+#tituloControles{
+    position: relative;
+    top: -532px;
+    right: 0px;
+}
+
+#imagneControles{
+    position: relative;
+    top: -388px;
+    right: -60px;
+    width: 200px;
+}
+
+#textoRotar{
+    position: relative;
+    top: -362px;
+    right: 144px;
+    width: 50px;
+}
+
+#lineaRotar{
+    position: relative;
+    top: -388px;
+    right: 175px;
+    width: 2px;
+    height: 30px;
+}
+
+#textoBajar{
+    position: relative;
+    top: -343px;
+    right: 144px;
+    width: 50px;
+}
+#lineaBajar1{
+    position: relative;
+    top: -351px;
+    right: 117px;
+    width: 2px;
+    height: 33px;
+}
+
+#lineaBajar2{
+    position: relative;
+    top: -351px;
+    right: 151px;
+    width: 30px;
+}
+
+#textoDesplazar{
+    position: relative;
+    top: -520px;
+    right: -213px;
+    width: 80px;
+}
+
+#lineaDesplazar1{
+    position: relative;
+    top: -620px;
+    right: -60px;
+    width: 2px;
+}
+
+#lineaDesplazar2{
+    position: relative;
+    top: -552px;
+    right: -193px;
+    width: 2px;
+    height: 146px;
+}
+
+#lineaDesplazar3{
+    position: relative;
+    top: -696px;
+    right: -48px;
+    width: 141px;
+    height: 2px; 
+}
+
+#lineaDesplazar4{
+    position: relative;
+    top: -545px;
+    right: 22px;
+    width: 2px;
+    height: 30px;
+}
+
+#fondoBtnAdelanteIniciarJuego{
+    position: relative;
+    top: -386px;
+    width: 10%;
+    right: -6px;
+}
+
+#btnAdelanteIniciarJuego{
+    position: relative;
+    top: -392px;
+    width: 5%;
+    right: 23px;
+}
+
+#juego{
+    display: none;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#fondoJuego{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#tetris{
+    position: relative;
+    width: 240px;
+    height: 400px;
+    top:-1100px;
+    right: 4px;
+    z-index: 1;
+    
+}
+
+
+#nextPiece{
+    position: relative;
+    top: -1440px;
+    right: 20px;
+    width:60px;
+    height: 60px;
+
+}
+
+#fondoContadorNivel{
+    position: relative;
+    top: -461px;
+    right: 125px;
+}
+
+#textoNivel{
+    position: relative;
+    top:-448px;
+    right: 168px;
+}
+
+#level{
+    position: relative;
+    width: 50px;
+    top:-493px;
+    right: -12px;
+    color: white;
+    font-family: 'Geniso';
+    font-weight: 900;
+}
+
+#fondoContadorPuntos{
+    position: relative;
+    top: -465px;
+    right: 125px;
+}
+
+#textoPuntos{
+    position: relative;
+    top:-450px;
+    right: 168px;
+}
+
+#score{
+    width: 50px;
+    position: relative;
+    width: 50px;
+    top:-495px;
+    right: -10px;
+    color: white;
+    font-family: 'Geniso';
+    font-weight: 900;
+}
+
+#fondoContadorTiempo{
+    position: relative;
+    top: -380px;
+    right: 125px;
+}
+
+#textoTiempo{
+    position: relative;
+    top:-363px;
+    right: 168px;
+}
+
+#time{
+    width: 50px;
+    position: relative;
+    width: 50px;
+    top:-427px;
+    right: -10px;
+    color: white;
+    font-family: 'Geniso';
+    font-weight: 900;
+}
+#fondoContadorLineas{
+    position: relative;
+    top: -563px;
+    right: 125px;
+}
+
+#textoLineas{
+    position: relative;
+    top:-547px;
+    right: 168px;
+}
+
+#lines{
+    width: 50px;
+    position: relative;
+    width: 50px;
+    top:-595px;
+    right: -12px;
+    color: white;
+    font-family: 'Geniso';
+    font-weight: 900;
+}
+
+#fondoVolumen{
+    position: relative;
+    top: -430px;
+    right: 83px;
+}
+
+#imagenVolumen{
+    position: relative;
+    top:-435px;
+    right: 115px;
+}
+
+#imagenPausa{
+    position: relative;
+    top:-390px;
+    right: 147px;
+    display: inline;
+}
+
+#fondoHome{
+    position: relative;
+    top: -351px;
+    right: 184px;
+}
+
+#imagenHome{
+    position: relative;
+    top:-357px;
+    right: 215px;
+}
+
+#ubicacionBtnControles{
+    position: relative;
+    top:-448px;
+    right: -119px;
+    width: 200px;
+
+}
+
+#btnRotar{
+    position: relative;
+    top:-15px;
+    right: 57px;
+}
+
+#btnArriba{
+    position: relative;
+    top:-30px;
+    right: 1px;
+}
+
+#btnDerecha{
+    position: relative;
+    top:-59px;
+    right: -114px;
+}
+
+#btnIzquierda{
+    position: relative;
+    top:-59px;
+    right: 46px;
+}
+
+#btnAbajo{
+    position: relative;
+    top:-86px;
+    right: -33px;
+}
+
+
+#ubicacionPausa{
+    display:none;
+    position: relative;
+    top: -1100px;
+    right: -95px;
+    height: 400px;
+    width: 240px;
+    z-index: 2;
+}
+
+#fondoPausa{
+    position: relative;
+    top: 149px;
+    right: 0px;
+}
+
+#juegoPausado{
+    position: relative;
+    top: 65px;
+    right: 0px;
+}
+
+#textoPausado{
+    position: relative;
+    top: 79px;
+    right: 0px;
+}
+
+
+#pantallaDerrota{
+    display: none;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    top: 0px;
+}
+
+#fondoDerrota{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    top: 0px;
+    z-index: 2;
+}
+
+#ubicacionBtnPerdidia{
+    position: relative;
+    top: -70px;
+    right: 0px;
+    z-index: 2;
+}
+#botonHomePerdida{
+    position: relative;
+    top: -90px;
+    right: -100px;
+    z-index: 2; 
+}
+
+
+#botonJugarPerdida{
+    position: relative;
+    top: -90px;
+    right: 110px;
+    z-index: 2;
+}
+
+
+#tetra{
+    position: relative;
+    margin: 0 auto;
+    top: -1060px;
+    right: 28px;
+    z-index: 2;
+    width: 100px;
+    display: none;
+}
+
+#imagenTetra{
+    position: relative;
+    top:0px;
+    width: 200px;
+    height: 200px;
+
+}
