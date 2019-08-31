@@ -25,7 +25,7 @@ var menu = document.getElementById("menu");
 var creditosPantalla = document.getElementById("creditos");
 var pantallaCargaHistoria = document.getElementById("pantallaCargaHistoria")
 var pantallaCargaControles = document.getElementById("pantallaCargaControles")
-var juego= document.getElementById("juego");
+var juego = document.getElementById("juego");
 var tetraImagen = document.getElementById("tetra");
 var s = document.getElementById("segundos");
 var m = document.getElementById("minutos");
@@ -36,6 +36,8 @@ var ubicacionControles = document.getElementById("botonesMenu");
 var imagenPausa = document.getElementById("imagenPausa");
 var fondoHome = document.getElementById("fondoHome");
 var imagenHome = document.getElementById("imagenHome");
+var botonesMenu = document.getElementById("botonesMenu");
+var ubicacionBtnControles = document.getElementById("ubicacionBtnControles");
 
 
 
@@ -388,12 +390,13 @@ function fPause(pausar_ahora) {
     if (pause) {
 
         ubicacionPausa.style.display = "block";
-        tetris.style.top = "-1500px";
+        tetris.style.top = "-1505px";
         nextPiece.style.top = "-1840px";
+
 
     } else {
         ubicacionPausa.style.display = "none";
-        tetris.style.top = "-1100px";
+        tetris.style.top = "-1105px";
         nextPiece.style.top = "-1440px";
         imagenTetra.style.top = "-1060";
         update();
@@ -532,25 +535,15 @@ function reiniciarTiempo() {
 function detenerMusica() {
 
     pausaMusica++;
-   
+
 
     if (pausaMusica % 2 === 0) {
         musicaFondo.play();
         volumenIcono.src = "img/recursosJuego/volumen.png";
-        volumenFondo.style.display = "inline";
-        ubicacionControles.style.right = "0px";
-        volumenIcono.style.right = "115px";
-        volumenIcono.style.top = "-435px";
-        ubicacionControles.style.top = "0px";
-        ubicacionControles.style.right = "-117px";
+
     } else {
-        volumenFondo.style.display = "none";
         musicaFondo.pause();
-        volumenIcono.src = "img/recursosJuego/icono_musica off.png";
-        volumenIcono.style.right = "110px";
-        volumenIcono.style.top = "-428px";
-        ubicacionControles.style.right = "-125px";
-        ubicacionControles.style.top = "-5px";
+        volumenIcono.src = "img/recursosJuego/icono_musica_off.png";
 
     }
 }
@@ -559,18 +552,12 @@ function detenerMusica() {
 
 function tetraPausa(activa) {
     if (activa) {
-        imagenPausa.style.display = "none";
 
-        volumenFondo.style.right = "106px";
-        volumenIcono.style.right = "138px";
-        fondoHome.style.right = "167px";
-        imagenHome.style.right = "198px";
+        botonesMenu.style.display = "none";
+
     } else {
-        imagenPausa.style.display = "inline";
-        volumenFondo.style.right = "83px";
-        volumenIcono.style.right = "115px";
-        fondoHome.style.right = "184px";
-        imagenHome.style.right = "215px";
+        botonesMenu.style.display = "block";
+       
     }
 }
 
@@ -578,12 +565,14 @@ function tetraPausa(activa) {
 function mostrarTetra(activa) {
     if (activa) {
         tetraImagen.style.display = "block";
-        tetris.style.top = "-1305px";
-        nextPiece.style.top = "-1645px";
+        tetris.style.top = "-1259px";
+        nextPiece.style.top = "-1594px";
+        ubicacionBtnControles.style.top = "-398px";
     } else {
         tetraImagen.style.display = "none";
         tetris.style.top = "-1105px";
         nextPiece.style.top = "-1440px";
+        ubicacionBtnControles.style.top = "-448px";
     }
 
 }
