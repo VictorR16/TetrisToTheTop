@@ -18,7 +18,7 @@ const colors = [
     null,
     '#C8BA54',
     '#B07D38',
-    '#B07D38',
+    '#9D484E',
     '#7B567B',
     '#3E6783',
     '#618C8E',
@@ -177,11 +177,17 @@ function drawMatrizNext(matriz, offset) {
 /* Dibujar el canvas y las figuras*/
 function draw() {
     var img = new Image();
-    if (player.level == 0) {
+    if (player.level < 3) {
         img.src = "img/recursosJuego/fondoTableroTetris.png";
         context.drawImage(img, 0, 0);
-    } else if (player.level >= 1) {
+    } else if (player.level >= 3 && player.level < 5) {
         img.src = "img/recursosJuego/fondo2.png";
+        context.drawImage(img, 0, 0);
+    } else if (player.level >= 5 && player.level < 8) {
+        img.src = "img/recursosJuego/fondo3.png";
+        context.drawImage(img, 0, 0);
+    } else if (player.level >= 8) {
+        img.src = "img/recursosJuego/fondo4.png";
         context.drawImage(img, 0, 0);
     }
     /*  context.fillStyle = "#ffffff";*/
@@ -214,7 +220,10 @@ function gridSweep() {
         rowCount *= 2;
         if (player.lines % 3 === 0) {
             player.level++;
-            tetra(fondoTetra[fondoTetra.length * Math.random() | 0]);
+            if (player.level == 3 || player.level == 5 || player.level == 8) {
+
+            } else
+                tetra(fondoTetra[fondoTetra.length * Math.random() | 0]);
 
         }
     }
@@ -275,7 +284,7 @@ function playerReset() {
         player.level = 0;
         reiniciarTiempo();
         document.getElementById("pantallaDerrota").style.display = "block";
-        document.getElementById("tetra").style.display = "none";
+        mostrarTetra(false);
 
 
     }

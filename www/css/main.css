@@ -92,7 +92,7 @@ body{
 
 #creditosContenido{
     position: relative;
-    top: -505px;
+    top: -370px;
     right: -30px;
     width: 55%;
 
@@ -100,14 +100,14 @@ body{
 
 #fondoBtnAtrasCreditos{
     position: relative;
-    top: -460px;
+    top: -243px;
     width: 10%;
     right: 200px;
 }
 
 #btnAtrasCreditos{
     position: relative;
-    top: -467px;
+    top: -250px;
     width: 5%;
     right: 232px;
     transform: rotate(200grad);
@@ -383,10 +383,21 @@ body{
     font-weight: 900;
 }
 
+#botonesMenu{
+    display: block;
+    position: relative;
+    height: 50px;
+    top:-5px;
+    right: -117px;
+    width: 156px;
+
+}
+
 #fondoVolumen{
     position: relative;
     top: -430px;
     right: 83px;
+    display: inline;
 }
 
 #imagenVolumen{
