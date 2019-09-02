@@ -390,14 +390,14 @@ function fPause(pausar_ahora) {
     if (pause) {
 
         ubicacionPausa.style.display = "block";
-        tetris.style.top = "-1505px";
-        nextPiece.style.top = "-1840px";
+        tetris.style.top = "-1555px";
+        nextPiece.style.top = "-1890px";
 
 
     } else {
         ubicacionPausa.style.display = "none";
-        tetris.style.top = "-1105px";
-        nextPiece.style.top = "-1440px";
+        tetris.style.top = "-1155px";
+        nextPiece.style.top = "-1490px";
         imagenTetra.style.top = "-1060";
         update();
     }
@@ -565,14 +565,14 @@ function tetraPausa(activa) {
 function mostrarTetra(activa) {
     if (activa) {
         tetraImagen.style.display = "block";
-        tetris.style.top = "-1259px";
-        nextPiece.style.top = "-1594px";
-        ubicacionBtnControles.style.top = "-398px";
+        tetris.style.top = "-1309px";
+        nextPiece.style.top = "-1644px";
+        ubicacionBtnControles.style.top = "-448px";
     } else {
         tetraImagen.style.display = "none";
-        tetris.style.top = "-1105px";
-        nextPiece.style.top = "-1440px";
-        ubicacionBtnControles.style.top = "-448px";
+        tetris.style.top = "-1155px";
+        nextPiece.style.top = "-1490px";
+        ubicacionBtnControles.style.top = "-498px";
     }
 
 }

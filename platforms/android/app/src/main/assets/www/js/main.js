@@ -12,6 +12,33 @@ const canvasNext = document.getElementById("nextPiece");
 const contextNext = canvasNext.getContext("2d");
 contextNext.scale(19, 19);
 
+//instacia de los elementos a utilizar.
+var pantallaDerrota = document.getElementById("pantallaDerrota");
+var score = document.getElementById("score");
+var inline = document.getElementById("lines");
+var level = document.getElementById("level");
+var ubicacionPausa = document.getElementById("ubicacionPausa");
+var tetris = document.getElementById("tetris");
+var nextPiece = document.getElementById("nextPiece");
+var imagenTetra = document.getElementById("imagenTetra");
+var menu = document.getElementById("menu");
+var creditosPantalla = document.getElementById("creditos");
+var pantallaCargaHistoria = document.getElementById("pantallaCargaHistoria")
+var pantallaCargaControles = document.getElementById("pantallaCargaControles")
+var juego = document.getElementById("juego");
+var tetraImagen = document.getElementById("tetra");
+var s = document.getElementById("segundos");
+var m = document.getElementById("minutos");
+var volumenIcono = document.getElementById("imagenVolumen");
+var volumenFondo = document.getElementById("fondoVolumen");
+var musicaFondo = document.getElementById("musicaFondo");
+var ubicacionControles = document.getElementById("botonesMenu");
+var imagenPausa = document.getElementById("imagenPausa");
+var fondoHome = document.getElementById("fondoHome");
+var imagenHome = document.getElementById("imagenHome");
+var botonesMenu = document.getElementById("botonesMenu");
+var ubicacionBtnControles = document.getElementById("ubicacionBtnControles");
+
 
 
 const colors = [
@@ -26,6 +53,7 @@ const colors = [
 
 ];
 
+
 const player = {
     pos: { x: 0, y: 0 },
     matriz: null,
@@ -34,7 +62,6 @@ const player = {
     lines: 0,
     level: 0
 }
-
 
 /* Piezas del juego */
 function createPiece(tipo) {
@@ -190,14 +217,13 @@ function draw() {
         img.src = "img/recursosJuego/fondo4.png";
         context.drawImage(img, 0, 0);
     }
-    /*  context.fillStyle = "#ffffff";*/
-    /* context.fillRect(0, 0, canvas.width, canvas.height);*/
     drawMatriz(grid, { x: 0, y: 0 });
     drawMatriz(player.matriz, player.pos);
     drawMatrizNext(player.next, { x: 1, y: 1 });
 
 
 }
+
 /* Funcion para eliminar filas si estan completas */
 function gridSweep() {
     const fondoTetra = 'CDEFGH';
@@ -230,8 +256,6 @@ function gridSweep() {
 
 
 }
-
-
 
 /* Actualiza la pantalla cada frame */
 function update(time = 0) {
@@ -283,7 +307,7 @@ function playerReset() {
         player.lines = 0;
         player.level = 0;
         reiniciarTiempo();
-        document.getElementById("pantallaDerrota").style.display = "block";
+        pantallaDerrota.style.display = "block";
         mostrarTetra(false);
 
 
@@ -297,6 +321,7 @@ function playerMove(direction) {
         player.pos.x -= direction;
     }
 }
+
 /* Funcion para rotar las figuras */
 function rotate(matriz) {
     for (let y = 0; y < matriz.length; ++y) {
@@ -325,10 +350,10 @@ function PlayerRotate() {
     }
 }
 
+
 function rotar() {
     PlayerRotate();
 }
-
 
 /* Controles con teclado*/
 function mover(boton) {
@@ -352,9 +377,9 @@ function mover(boton) {
 
 /* Se actualizan los puntajes en el juego */
 function updateScore() {
-    document.getElementById("score").innerHTML = player.score;
-    document.getElementById("lines").innerHTML = player.lines;
-    document.getElementById("level").innerHTML = player.level;
+    score.innerHTML = player.score;
+    lines.innerHTML = player.lines;
+    level.innerHTML = player.level;
 
 }
 
@@ -364,53 +389,54 @@ function fPause(pausar_ahora) {
 
     if (pause) {
 
-        document.getElementById("ubicacionPausa").style.display = "block";
-        document.getElementById("tetris").style.top = "-1500px";
-        document.getElementById("nextPiece").style.top = "-1840px";
+        ubicacionPausa.style.display = "block";
+        tetris.style.top = "-1555px";
+        nextPiece.style.top = "-1890px";
+
 
     } else {
-        document.getElementById("ubicacionPausa").style.display = "none";
-        document.getElementById("tetris").style.top = "-1100px";
-        document.getElementById("nextPiece").style.top = "-1440px";
-        document.getElementById("imagenTetra").style.top = "-1060";
+        ubicacionPausa.style.display = "none";
+        tetris.style.top = "-1155px";
+        nextPiece.style.top = "-1490px";
+        imagenTetra.style.top = "-1060";
         update();
     }
 }
 
 
 function creditos() {
-    document.getElementById("menu").style.display = "none";
-    document.getElementById("creditos").style.display = "block";
+    menu.style.display = "none";
+    creditosPantalla.style.display = "block";
 
 }
 
 function atrasCreditos() {
-    document.getElementById("creditos").style.display = "none";
-    document.getElementById("menu").style.display = "block";
+    creditosPantalla.style.display = "none";
+    menu.style.display = "block";
 
 }
 
 
 
 function jugar() {
-    document.getElementById("pantallaCargaHistoria").style.display = "block";
-    document.getElementById("menu").style.display = "none";
+    pantallaCargaHistoria.style.display = "block";
+    menu.style.display = "none";
 
 
 }
 
 function adelanteCarga() {
-    document.getElementById("pantallaCargaHistoria").style.display = "none";
-    document.getElementById("pantallaCargaControles").style.display = "block";
+    pantallaCargaHistoria.style.display = "none";
+    pantallaCargaControles.style.display = "block";
 
 
 }
 
 function iniciarJuego() {
-    document.getElementById("pantallaCargaControles").style.display = "none";
-    document.getElementById("juego").style.display = "block";
-    document.getElementById("pantallaDerrota").style.display = "none";
-    document.getElementById("tetra").style.display = "none";
+    pantallaCargaControles.style.display = "none";
+    juego.style.display = "block";
+    pantallaDerrota.style.display = "none";
+    tetraImagen.style.display = "none";
     player.matriz = null;
     player.next = null;
     mostrarTetra(false);
@@ -437,13 +463,13 @@ function limpiarPantalla() {
 }
 
 function irMenu() {
-    document.getElementById("juego").style.display = "none";
-    document.getElementById("ubicacionPausa").style.display = "none";
-    document.getElementById("menu").style.display = "block";
-    document.getElementById("tetris").style.top = "-1105px";
-    document.getElementById("nextPiece").style.top = "-1440px";
-    document.getElementById("pantallaDerrota").style.display = "none";
-    document.getElementById("tetra").style.display = "none";
+    juego.style.display = "none";
+    ubicacionPausa.style.display = "none";
+    menu.style.display = "block";
+    tetris.style.top = "-1105px";
+    nextPiece.style.top = "-1440px";
+    pantallaDerrota.style.display = "none";
+    tetraImagen.style.display = "none";
     if (pause) {
         pause = false;
     }
@@ -456,12 +482,6 @@ function tiempo() {
     contador_s = 0;
 
     contador_m = 0;
-
-    s = document.getElementById("segundos");
-
-    m = document.getElementById("minutos");
-
-
 
     cronometro = setInterval(
 
@@ -507,9 +527,6 @@ function tiempo() {
 
 function reiniciarTiempo() {
     clearInterval(cronometro);
-    s = document.getElementById("segundos");
-
-    m = document.getElementById("minutos");
     s.innerHTML = 0;
     m.innerHTML = 0;
 
@@ -519,12 +536,15 @@ function detenerMusica() {
 
     pausaMusica++;
 
+
     if (pausaMusica % 2 === 0) {
-        document.getElementById("musicaFondo").play();
-        document.getElementById("imagenVolumen").src = "img/recursosJuego/volumen.png";
+        musicaFondo.play();
+        volumenIcono.src = "img/recursosJuego/volumen.png";
+
     } else {
-        document.getElementById("musicaFondo").pause();
-        document.getElementById("imagenVolumen").src = "img/recursosJuego/icono_musica off.png";
+        musicaFondo.pause();
+        volumenIcono.src = "img/recursosJuego/icono_musica_off.png";
+
     }
 }
 
@@ -532,30 +552,27 @@ function detenerMusica() {
 
 function tetraPausa(activa) {
     if (activa) {
-        document.getElementById("imagenPausa").style.display = "none";
-        document.getElementById("fondoVolumen").style.right = "106px";
-        document.getElementById("imagenVolumen").style.right = "136px";
-        document.getElementById("fondoHome").style.right = "167px";
-        document.getElementById("imagenHome").style.right = "198px";
+
+        botonesMenu.style.display = "none";
+
     } else {
-        document.getElementById("imagenPausa").style.display = "inline";
-        document.getElementById("fondoVolumen").style.right = "83px";
-        document.getElementById("imagenVolumen").style.right = "115px";
-        document.getElementById("fondoHome").style.right = "184px";
-        document.getElementById("imagenHome").style.right = "215px";
+        botonesMenu.style.display = "block";
+       
     }
 }
 
 
 function mostrarTetra(activa) {
     if (activa) {
-        document.getElementById("tetra").style.display = "block";
-        document.getElementById("tetris").style.top = "-1305px";
-        document.getElementById("nextPiece").style.top = "-1645px";
+        tetraImagen.style.display = "block";
+        tetris.style.top = "-1309px";
+        nextPiece.style.top = "-1644px";
+        ubicacionBtnControles.style.top = "-448px";
     } else {
-        document.getElementById("tetra").style.display = "none";
-        document.getElementById("tetris").style.top = "-1105px";
-        document.getElementById("nextPiece").style.top = "-1440px";
+        tetraImagen.style.display = "none";
+        tetris.style.top = "-1155px";
+        nextPiece.style.top = "-1490px";
+        ubicacionBtnControles.style.top = "-498px";
     }
 
 }
@@ -570,7 +587,7 @@ function tetra(caso) {
         function () {
             switch (caso) {
                 case "A":
-                    document.getElementById("imagenTetra").src = "img/tetra/8.png";
+                    imagenTetra.src = "img/tetra/8.png";
 
                     tetraPausa(true);
                     mostrarTetra(true);
@@ -585,7 +602,7 @@ function tetra(caso) {
                     }
                     break;
                 case "B":
-                    document.getElementById("imagenTetra").src = "img/tetra/1.png";
+                    imagenTetra.src = "img/tetra/1.png";
                     tetraPausa(true);
                     mostrarTetra(true);
 
@@ -596,7 +613,7 @@ function tetra(caso) {
                     }
                     break;
                 case "C":
-                    document.getElementById("imagenTetra").src = "img/tetra/2.png";
+                    imagenTetra.src = "img/tetra/2.png";
                     tetraPausa(true);
                     mostrarTetra(true);
 
@@ -607,7 +624,7 @@ function tetra(caso) {
                     }
                     break;
                 case "D":
-                    document.getElementById("imagenTetra").src = "img/tetra/3.png";
+                    imagenTetra.src = "img/tetra/3.png";
                     tetraPausa(true);
                     mostrarTetra(true);
 
@@ -618,7 +635,7 @@ function tetra(caso) {
                     }
                     break;
                 case "E":
-                    document.getElementById("imagenTetra").src = "img/tetra/4.png";
+                    imagenTetra.src = "img/tetra/4.png";
                     tetraPausa(true);
                     mostrarTetra(true);
 
@@ -629,7 +646,7 @@ function tetra(caso) {
                     }
                     break;
                 case "F":
-                    document.getElementById("imagenTetra").src = "img/tetra/5.png";
+                    imagenTetra.src = "img/tetra/5.png";
                     tetraPausa(true);
                     mostrarTetra(true);
 
@@ -640,7 +657,7 @@ function tetra(caso) {
                     }
                     break;
                 case "G":
-                    document.getElementById("imagenTetra").src = "img/tetra/6.png";
+                    imagenTetra.src = "img/tetra/6.png";
                     tetraPausa(true);
                     mostrarTetra(true);
 
@@ -651,7 +668,7 @@ function tetra(caso) {
                     }
                     break;
                 case "H":
-                    document.getElementById("imagenTetra").src = "img/tetra/7.png";
+                    imagenTetra.src = "img/tetra/7.png";
                     tetraPausa(true);
                     mostrarTetra(true);
 
